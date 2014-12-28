@@ -1,15 +1,11 @@
-var app = angular.module('addsSystem', ['ngRoute', 'ngResource']);
-
-app.factory("Post", function($resource) {
-    return $resource("/api/posts/:id");
-});
+var app = angular.module('adsSystem', ['ngRoute', 'ngResource']);
 
 app.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: "PlayerFactory",
-                templateUrl: "./templates/player-creation.html"
+                controller: "LoadAllAddsCtrl",
+                templateUrl: "./templates/home.html"
             })
             .when('/choice', {
                 controller: "Questions",
