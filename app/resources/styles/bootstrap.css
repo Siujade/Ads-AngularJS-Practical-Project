@@ -4964,7 +4964,10 @@ a.list-group-item-danger.active:focus {
 .panel-default > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #ddd;
 }
+
 .panel-primary {
+  padding: 0;
+  margin: 10px;
   border-color: #428bca;
 }
 .panel-primary > .panel-heading {

@@ -1,3 +1,11 @@
-<ul>
-    <li data-ng-repeat="ad in ads">{{ad.text}}</li>
-</ul>
+<div class="well add-panel col-lg-6" data-ng-repeat="ad in ads">
+    <h2 class="title">{{ad.title}}</h2>
+    <div class="img-responsive"><img data-ng-src="{{ad.imageDataUrl}}" /></div>
+    <span class="date">{{ad.date}}</span>
+    <div class="text">{{ad.text}}</div>
+    <div class="text">{{ad.ownerName}}</div>
+    <div class="text">{{ad.ownerEmail}}</div>
+    <div class="text">{{ad.ownerPhone}}</div>
+    <div class="text">{{ad.categoryId}}</div>
+    <div class="text">{{ad.townId}}</div>
+</div>
