@@ -1,30 +1,14 @@
-<!--<div class="roll">-->
-<!--&lt;!&ndash;<div class="add-panel col-lg-12" data-ng-repeat="ad in ads">&ndash;&gt;-->
-    <!--&lt;!&ndash;<h2 class="title">{{ad.title}}</h2>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="img-responsive"></div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<span class="date">{{ad.date}}</span>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="text">{{ad.text}}</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="text">{{ad.ownerName}}</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="text">{{ad.ownerEmail}}</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="text">{{ad.ownerPhone}}</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="text">{{ad.categoryId}}</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="text">{{ad.townId}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--<div class="red col-lg-6">gfdgdg</div>-->
-    <!--<div class="blue col-lg-6">gfdgdg</div>-->
-<!--</div>-->
-
-<div data-ng-repeat="ad in ads" class="panel panel-primary col-lg-2">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ad.title}}</h3>
-    </div>
-    <div class="panel-body">
-        {{ad.text}}
-    </div>
+<div class="container">
+<div class="well add-panel  col-lg-6 col-md-5 col-sm-12" dir-paginate="ad in ads | itemsPerPage: 3" total-items="totalAds">
+    <h2 class="title">{{ad.title}}<span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span></h2>
+    <div class="img-responsive"><img data-ng-src="{{ad.imageDataUrl}}" /></div>
+    <div class="text">{{ad.text}}</div>
+    <div class="text">{{ad.ownerName}}</div>
+    <div class="text">{{ad.ownerEmail}}</div>
+    <div class="text">{{ad.ownerPhone}}</div>
+    <div class="text">{{ad.categoryId}}</div>
+    <div class="text">{{ad.townId}}</div>
 </div>
-
-<div class="well add-panel" data-ng-repeat="ad in ads">
-    <h2 class="title">{{ad.title}}</h2>
-    <span class="date">{{ad.date}}</span>
-
 </div>
+<dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+

@@ -1,4 +1,4 @@
-var app = angular.module('adsSystem', ['ngRoute', 'ngResource']);
+var app = angular.module('adsSystem', ['ngRoute', 'ngResource', 'angularUtils.directives.dirPagination']);
 
 app.config(['$routeProvider',
     function ($routeProvider) {

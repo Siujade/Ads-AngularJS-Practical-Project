@@ -4128,9 +4128,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #999;
 }
 .pagination {
-  display: inline-block;
+  display: block;
   padding-left: 0;
-  margin: 20px 0;
+  margin: 30px auto;
+  width:200px;
   border-radius: 4px;
 }
 .pagination > li {
@@ -4964,10 +4965,7 @@ a.list-group-item-danger.active:focus {
 .panel-default > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #ddd;
 }
-
 .panel-primary {
-  padding: 0;
-  margin: 10px;
   border-color: #428bca;
 }
 .panel-primary > .panel-heading {

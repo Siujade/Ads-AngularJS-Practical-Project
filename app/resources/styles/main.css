@@ -1,22 +1,35 @@
 .add-panel{
-
+    margin: 10px;
+    max-width: 550px;
+    height: 400px;
 }
 
 .add-panel .title{
-
+    font-size: 25px;
+    height: 50px;
 }
 
 .add-panel .date{
+   font-size: 17px;
+    float:right;
+}
 
+.add-panel img{
+    width:200px;
+   float:left;
 }
 
 .add-panel .text{
-
+   background: lavender;
+    margin-bottom: 10px;
 }
 
-.red{
-    background: red;
+.container{
+    margin: 0 auto;
+    width:900px;
 }
-.blue {
-    background: blue;
+
+header{
+
+    text-align: center;
 }
