@@ -1,3 +1,3 @@
-app.controller('LoadAdds', function($scope){
+app.controller('Users', function($scope){
 
 });

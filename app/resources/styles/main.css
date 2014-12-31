@@ -33,3 +33,14 @@ header{
 
     text-align: center;
 }
+
+nav{
+    width:200px;
+    text-align: center;
+    float:left;
+}
+
+.form-signin{
+    width:300px;
+    margin: 0 auto;
+}

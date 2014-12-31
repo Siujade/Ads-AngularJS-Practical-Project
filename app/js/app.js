@@ -7,15 +7,14 @@ app.config(['$routeProvider',
                 controller: "LoadAllAddsCtrl",
                 templateUrl: "./templates/home.html"
             })
-            .when('/choice', {
-                controller: "Questions",
-                templateUrl: "./templates/question-choice.html"
+            .when('/login', {
+                controller: "MainCtrl",
+                templateUrl: "./templates/login.html"
             })
-            .when('/score', {
-                controller: "Questions",
-                templateUrl: "./templates/scoreboard.html"
+            .when('/register', {
+                //controller: "Questions",
+                templateUrl: "./templates/register.html"
             })
             .otherwise({redirectTo: '/'});
     }
-
 ]);

@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="resources/styles/bootstrap.css">
     <link rel="stylesheet" href="resources/styles/bootstrap-theme.css">
 </head>
-<body>
-<header data-ng-cloak data-ng-controller="MainCtrl">
+<body  data-ng-controller="MainCtrl">
+<header data-ng-cloak>
     <h1>{{loc}}</h1>
 </header>
-
+<nav>
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active" ng-click="loc = 'Ads - Home'"><a href="#/">Home</a></li>
+        <li role="presentation" ng-click="loc = 'Ads - Login'"><a href="#/login">Login</a></li>
+        <li role="presentation" ng-click="loc = 'Ads - Register'"><a href="#/register">Register</a></li>
+    </ul>
+</nav>
 <div data-ng-view=""></div>
 
 <script src="libs/angular.js"></script>
