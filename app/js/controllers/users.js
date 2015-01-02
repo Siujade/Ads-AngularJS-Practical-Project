@@ -15,9 +15,10 @@ app.controller('Users', function ($scope, userData, $log) {
     $scope.userAction = function(action) {
         userData.register(getUserData(), action)
             .$promise
-            .then(function (token) {
-                alert('success');
-                console.log(token);
+            .then(function (data) {
+                sessionStorage.token = data['access_token'];
+                sessionStorage.username = data.username;
+                location.href = ('#/home');
             },
             function (error) {
                 $log.error(error);

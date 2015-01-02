@@ -9,13 +9,16 @@
 </head>
 <body  data-ng-controller="MainCtrl">
 <header data-ng-cloak>
-    <h1>{{loc}}</h1>
+    <h1>{{loc}}<span>{{currentUser}}</span></h1>
 </header>
 <nav>
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active" ng-click="loc = 'Ads - Home'"><a href="#/">Home</a></li>
-        <li role="presentation" ng-click="loc = 'Ads - Login'"><a href="#/login">Login</a></li>
-        <li role="presentation" ng-click="loc = 'Ads - Register'"><a href="#/register">Register</a></li>
+    <ul class="nav nav-pills nav-stacked" data-ng-cloak>
+        <li class="active"  ng-click="loc = 'Ads - Home'"><a href="#/">Home</a></li>
+        <li  data-ng-if="!isLogged" data-ng-click="loc = 'Ads - Login'; removeClass()"><a href="#/login">Login</a></li>
+        <li  data-ng-if="!isLogged" data-ng-click="loc = 'Ads - Register'; removeClass()"><a href="#/register">Register</a></li>
+        <li  data-ng-if="isLogged" data-ng-click="loc = 'Ads - My Ads'; removeClass()"><a href="#/my-adds">My ads</a></li>
+        <li  data-ng-if="isLogged" data-ng-click="loc = 'Ads - Publish New Add'; removeClass()"><a href="#/new-add">Publish New Ad</a></li>
+        <li  data-ng-if="isLogged" data-ng-click="loc = 'Ads - Edit Profile'; removeClass()"><a href="#/profile">Edit Profile</a></li>
     </ul>
 </nav>
 <div data-ng-view=""></div>
@@ -28,10 +31,12 @@
 <script src="libs/dirPagination.js"></script>
 
 <script src="js/app.js"></script>
-<script src="js/services/ads-factory.js"></script>
+<script src="js/services/public-adds.js"></script>
 <script src="js/services/user-factory.js"></script>
+<script src="js/services/user-ads.js"></script>
 <script src="js/controllers/main.js"></script>
 <script src="js/controllers/ads.js"></script>
+<script src="js/controllers/user-ads.js"></script>
 <script src="js/controllers/users.js"></script>
 </body>
 </html>

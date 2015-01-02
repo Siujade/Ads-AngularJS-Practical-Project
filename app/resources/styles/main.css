@@ -44,3 +44,6 @@ nav{
     width:300px;
     margin: 0 auto;
 }
+.link:link{
+    background: red;
+}

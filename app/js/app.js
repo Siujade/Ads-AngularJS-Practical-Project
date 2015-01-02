@@ -6,6 +6,9 @@ app.config(['$routeProvider',
             .when('/', {
                 controller: "LoadAllAddsCtrl",
                 templateUrl: "./templates/home.html"
+            }).when('/user',{
+                controller: "LoadUserAdsCtrl",
+                templateUrl: "./templates/home.html"
             })
             .when('/login', {
                 controller: "Users",

@@ -1,5 +1,6 @@
 app.factory('userData', function ($resource) {
-    var rootUrl = 'http://localhost:1337/api/user/';
+  //  var rootUrl = 'http://localhost:1337/api/user/';
+    var rootUrl = 'http://softuni-ads.azurewebsites.net/api/user/';
     var resource = '';
 
     function registerNewUser(userData, url) {
