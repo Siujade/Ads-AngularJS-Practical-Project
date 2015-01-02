@@ -18,5 +18,4 @@ app.controller('LoadAllAddsCtrl', function($scope, adsData, $log) {
             .$promise
             .then(displayData);
     };
-
 });

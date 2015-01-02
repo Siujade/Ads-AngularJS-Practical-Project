@@ -8,11 +8,11 @@ app.config(['$routeProvider',
                 templateUrl: "./templates/home.html"
             })
             .when('/login', {
-                controller: "MainCtrl",
+                controller: "Users",
                 templateUrl: "./templates/login.html"
             })
             .when('/register', {
-                //controller: "Questions",
+                controller: "Users",
                 templateUrl: "./templates/register.html"
             })
             .otherwise({redirectTo: '/'});
