@@ -1,0 +1,14 @@
+<form id="add-creation-form">
+    <label for="title">Title:</label>
+    <input id="title" type="text" data-ng-model="title"> <br />
+    <label for="text">Text:</label>
+    <textarea id="text" data-ng-model="text"> </textarea> <br />
+    <label for="img">Image:</label>
+    <input type="file" id="img">
+    <label for="category">Category:</label>
+    <select id="category"></select>
+    <label for="town">Town:</label>
+    <select id="town"></select> <br />
+    <button data-ng-click="createAdd()">Publish</button>
+    <button>Cancel</button>
+</form>

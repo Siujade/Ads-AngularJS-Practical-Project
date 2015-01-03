@@ -7,7 +7,7 @@ app.config(['$routeProvider',
                 controller: "LoadAllAddsCtrl",
                 templateUrl: "./templates/home.html"
             }).when('/user',{
-                controller: "LoadUserAdsCtrl",
+                controller: "UserAdsCtrl",
                 templateUrl: "./templates/home.html"
             })
             .when('/login', {
@@ -17,6 +17,10 @@ app.config(['$routeProvider',
             .when('/register', {
                 controller: "Users",
                 templateUrl: "./templates/register.html"
+            })
+            .when('/new-add', {
+                controller: "UserAdsCtrl",
+                templateUrl: "./templates/add-creation.html"
             })
             .otherwise({redirectTo: '/'});
     }

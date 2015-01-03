@@ -47,3 +47,15 @@ nav{
 .link:link{
     background: red;
 }
+
+#add-creation-form{
+    display: block;
+    width:400px;
+    margin: 0 auto;
+}
+
+#add-creation-form > #text{
+    width: 200px;
+    height: 100px;
+    resize: none;
+}
