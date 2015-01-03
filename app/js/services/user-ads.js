@@ -1,7 +1,7 @@
 app.factory('adsUserData', function ($resource, $http) {
     var userData = sessionStorage.token;
-    //var url = 'http://localhost:1337/api/user/ads';
-    var url = 'http://softuni-ads.azurewebsites.net/api/user/ads';
+    var url = 'http://localhost:1337/api/user/ads';
+    //var url = 'http://softuni-ads.azurewebsites.net/api/user/ads';
     var resource = $resource(
         url,
         {id: '@id'},

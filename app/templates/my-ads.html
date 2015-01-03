@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="well add-panel  col-lg-6 col-md-5 col-sm-12" dir-paginate="ad in ads | itemsPerPage: 3" total-items="totalAds">
+        <h2 class="title">{{ad.title}}<span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span></h2>
+        <div class="img-responsive"><img data-ng-src="{{ad.imageDataUrl}}" /></div>
+        <div class="text">{{ad.text}}</div>
+        <div class="text">{{ad.townId}}</div>
+    </div>
+</div>
+<dir-pagination-controls ng-cloak on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>

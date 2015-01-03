@@ -18,9 +18,13 @@ app.config(['$routeProvider',
                 controller: "Users",
                 templateUrl: "./templates/register.html"
             })
-            .when('/new-add', {
+            .when('/new-ad', {
                 controller: "UserAdsCtrl",
                 templateUrl: "./templates/add-creation.html"
+            })
+            .when('/my-ads', {
+                controller: "UserAdsCtrl",
+                templateUrl: "./templates/my-ads.html"
             })
             .otherwise({redirectTo: '/'});
     }
