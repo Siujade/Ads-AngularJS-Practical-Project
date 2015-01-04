@@ -1,5 +1,6 @@
 app.factory('adsUserData', function ($resource, $http) {
-    var userData = sessionStorage.token;
+    $http.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.token;
+
     var url = 'http://localhost:1337/api/user/ads';
     //var url = 'http://softuni-ads.azurewebsites.net/api/user/ads';
     var resource = $resource(
@@ -10,8 +11,6 @@ app.factory('adsUserData', function ($resource, $http) {
                 method: 'GET'
             }
         });
-
-    $http.defaults.headers.common['Authorization'] = 'Bearer ' + userData;
 
     function getAllAds(page) {
         var startPage = page || 1;

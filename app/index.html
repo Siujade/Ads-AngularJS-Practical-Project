@@ -9,20 +9,26 @@
 </head>
 <body  data-ng-controller="MainCtrl">
 <header data-ng-cloak>
-    <h1>{{loc}}<span>{{currentUser}}</span></h1>
+    <h1>{{loc}}<span>{{currentUser}}<a href="#/" data-ng-if="isLogged" data-ng-click="logout()">Logout</a></span></h1>
 </header>
 <nav>
     <ul class="nav nav-pills nav-stacked" data-ng-cloak>
         <li class="active"  ng-click="loc = 'Ads - Home'"><a href="#/">Home</a></li>
-        <li  data-ng-if="!isLogged" data-ng-click="loc = 'Ads - Login'; removeClass()"><a href="#/login">Login</a></li>
-        <li  data-ng-if="!isLogged" data-ng-click="loc = 'Ads - Register'; removeClass()"><a href="#/register">Register</a></li>
-        <li  data-ng-if="isLogged" data-ng-click="loc = 'Ads - My Ads'; removeClass()"><a href="#/my-ads">My Ads</a></li>
-        <li  data-ng-if="isLogged" data-ng-click="loc = 'Ads - Publish New Add'; removeClass()"><a href="#/new-ad">Publish New Ad</a></li>
-        <li  data-ng-if="isLogged" data-ng-click="loc = 'Ads - Edit Profile'; removeClass()"><a href="#/profile">Edit Profile</a></li>
+        <li  data-ng-if="!isLogged" data-ng-click="changeHeading('Ads - Login')"><a href="#/login">Login</a></li>
+        <li  data-ng-if="!isLogged" data-ng-click="changeHeading('Ads - Register')"><a href="#/register">Register</a></li>
+        <li  data-ng-if="isLogged"  data-ng-click="changeHeading('Ads - My Ads')"><a href="#/my-ads">My Ads</a></li>
+        <li  data-ng-if="isLogged"  data-ng-click="changeHeading('Ads - Publish New Add');"><a href="#/new-ad">Publish New Ad</a></li>
+        <li  data-ng-if="isLogged"  data-ng-click="changeHeading('Ads - Edit Profile')"><a href="#/profile">Edit Profile</a></li>
+    </ul>
+    <ul class="nav nav-pills nav-stacked" data-ng-cloak data-ng-if="isLogged && loc == 'Ads - My Ads'">
+        <li class="active" ><a href="#/">All</a></li>
+        <li><a href="#/">Published</a></li>
+        <li><a href="#/">Waiting Approval</a></li>
+        <li><a href="#/">Inactive</a></li>
+        <li><a href="#/">Rejected</a></li>
     </ul>
 </nav>
 <div data-ng-view=""></div>
-
 <script src="libs/angular.js"></script>
 <script src="libs/angular-resource.js"></script>
 <script src="libs/angular-route.js"></script>

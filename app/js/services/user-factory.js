@@ -1,7 +1,11 @@
-app.factory('userData', function ($resource) {
+app.factory('userData', function ($resource, $http) {
     var rootUrl = 'http://localhost:1337/api/user/';
   //  var rootUrl = 'http://softuni-ads.azurewebsites.net/api/user/';
     var resource = '';
+
+    function setHeaders() {
+        $http.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.token;
+    }
 
     function registerNewUser(userData, url) {
         resource = $resource(rootUrl + url);
@@ -13,6 +17,14 @@ app.factory('userData', function ($resource) {
         resource = $resource(rootUrl + url);
 
         return resource.save(userData);
+    }
+
+    function logout() {
+        setHeaders();
+        resource = $resource(rootUrl + 'logout');
+        resource.save();
+        sessionStorage.clear();
+        location.href = "#/home";
     }
 
     //**Admin actions**//
@@ -27,6 +39,7 @@ app.factory('userData', function ($resource) {
 
     return {
         login : login,
+        logout : logout,
         register: registerNewUser,
         edit: editAd,
         delete: deleteAd
