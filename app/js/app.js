@@ -4,7 +4,7 @@ app.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: "LoadAllAddsCtrl",
+                controller: "LoadResourcesCtrl",
                 templateUrl: "./templates/home.html"
             }).when('/user',{
                 controller: "UserAdsCtrl",

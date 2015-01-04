@@ -28,7 +28,6 @@ app.factory('userData', function ($resource, $http) {
     }
 
     //**Admin actions**//
-
     function editAd(id, ad) {
         return resource.update({id: id}, ad);
     }

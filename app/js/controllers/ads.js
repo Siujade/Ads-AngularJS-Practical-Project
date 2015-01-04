@@ -1,4 +1,4 @@
-app.controller('LoadAllAddsCtrl', function($scope, adsData, $log) {
+app.controller('LoadResourcesCtrl', function($scope, publicData, $log) {
 
     function displayData(data){
             $scope.data = data;
@@ -6,15 +6,23 @@ app.controller('LoadAllAddsCtrl', function($scope, adsData, $log) {
             $scope.totalAds = data.ads.length;
     }
 
-    adsData.getAll(1)
-        .$promise
-        .then(displayData,
-        function (error) {
-            $log.error(error);
-        });
+    function loadPage(data) {
+        publicData.getAll(1, data, 0)
+            .$promise
+            .then(displayData,
+            function (error) {
+                $log.error(error);
+            });
+    }
+
+    loadPage();
+
+    $scope.$on('id', function (event, data) {
+        loadPage(data);
+    });
 
     $scope.pageChanged = function(newPage) {
-        adsData.getAll(newPage)
+        publicData.getAll(newPage)
             .$promise
             .then(displayData);
     };

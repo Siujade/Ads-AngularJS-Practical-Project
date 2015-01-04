@@ -42,7 +42,6 @@ header > h1 > span{
 nav{
     width:200px;
     text-align: center;
-    float:left;
 }
 
 .form-signin{
