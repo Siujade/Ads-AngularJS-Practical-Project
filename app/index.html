@@ -13,12 +13,12 @@
 </header>
 <nav class="navbar-left">
     <ul class="nav nav-pills nav-stacked" data-ng-cloak>
-        <li class="active"  ng-click="loc = 'Ads - Home'"><a href="#/">Home</a></li>
-        <li  data-ng-if="!isLogged" data-ng-click="changeHeading('Ads - Login')"><a href="#/login">Login</a></li>
-        <li  data-ng-if="!isLogged" data-ng-click="changeHeading('Ads - Register')"><a href="#/register">Register</a></li>
-        <li  data-ng-if="isLogged"  data-ng-click="changeHeading('Ads - My Ads')"><a href="#/my-ads">My Ads</a></li>
-        <li  data-ng-if="isLogged"  data-ng-click="changeHeading('Ads - Publish New Add');"><a href="#/new-ad">Publish New Ad</a></li>
-        <li  data-ng-if="isLogged"  data-ng-click="changeHeading('Ads - Edit Profile')"><a href="#/profile">Edit Profile</a></li>
+        <li class="active" data-ng-click="changeHeading('Ads - Home')"><a href="#/">Home</a></li>
+        <li  data-ng-if="!isLogged"><a href="#/login">Login</a></li>
+        <li  data-ng-if="!isLogged"><a href="#/register">Register</a></li>
+        <li  data-ng-if="isLogged"><a href="#/my-ads">My Ads</a></li>
+        <li  data-ng-if="isLogged"><a href="#/new-ad">Publish New Ad</a></li>
+        <li  data-ng-if="isLogged"><a href="#/profile">Edit Profile</a></li>
     </ul>
     <!--My adds section-->
     <ul class="nav nav-pills nav-stacked" data-ng-cloak data-ng-if="isLogged && loc == 'Ads - My Ads'">
@@ -31,13 +31,18 @@
 </nav>
     <!--Categories panel-->
 <nav class="navbar-right">
-    <ul class="clear nav nav-pills nav-stacked nav-right" data-ng-cloak>
+    <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
         Categories :
         <li class="active"><a href="#/">All</a></li>
         <li data-ng-repeat="category in categories"  data-ng-click="sortByCategory(category)"><a href="#/">{{category.name}}</a></li>
     </ul>
+   <!--Towns panel-->
+    <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
+        Towns :
+        <li class="active"><a href="#/">All</a></li>
+        <li data-ng-repeat="town in towns"  data-ng-click="sortByTown(town)"><a href="#/">{{town.name}}</a></li>
+    </ul>
 </nav>
-
 <div data-ng-view=""></div>
 <script src="libs/angular.js"></script>
 <script src="libs/angular-resource.js"></script>
@@ -47,6 +52,7 @@
 <script src="libs/dirPagination.js"></script>
 
 <script src="js/app.js"></script>
+<script src="js/directives/ng-heading.js"></script>
 <script src="js/services/public.js"></script>
 <script src="js/services/user-factory.js"></script>
 <script src="js/services/user-ads.js"></script>

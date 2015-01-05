@@ -6,8 +6,8 @@
     <div class="text">{{ad.ownerName}}</div>
     <div class="text">{{ad.ownerEmail}}</div>
     <div class="text">{{ad.ownerPhone}}</div>
-    <div class="text">{{ad.categoryId}}</div>
-    <div class="text">{{ad.townId}}</div>
+    <div class="text">{{categories[ad.categoryId - 1].name}}</div>
+    <div class="text">{{towns[ad.townId - 1].name}}</div>
 </div>
 </div>
 <dir-pagination-controls ng-cloak on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>

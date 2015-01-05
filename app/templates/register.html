@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-heading="Ads - Register">
     <form class="form-register" data-ng-submit="userAction('register')">
         <h2 class="form-register-heading">Please register</h2>
         <label for="userName" class="sr-only">Username</label>
@@ -16,7 +16,7 @@
         <div class="checkbox">
             <label>
                <select>
-                   <option ng-repeat="town in towns" data-ng-model="town">{{town}}</option>
+                   <option ng-repeat="town in towns" data-ng-model="town">{{town.name}}</option>
                </select>
             </label>
         </div>
