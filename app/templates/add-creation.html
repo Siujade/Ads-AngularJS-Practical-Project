@@ -6,9 +6,11 @@
     <label for="img">Image:</label>
     <input type="file" id="img">
     <label for="category">Category:</label>
-    <select id="category"></select>
+    <select id="category" data-ng-options="category.name for category in categories track by category.id" data-ng-model="category">
+    </select>
     <label for="town">Town:</label>
-    <select id="town"></select> <br />
+    <select id="town" data-ng-options="town.name for town in towns track by town.id" data-ng-model="town">
+    </select> <br />
     <button data-ng-click="createAdd()">Publish</button>
     <button>Cancel</button>
 </form>

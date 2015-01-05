@@ -2,7 +2,7 @@ app.controller('LoadResourcesCtrl', function($scope, publicData, $log) {
     function displayData(data){
             $scope.data = data;
             $scope.ads = data.ads;
-            $scope.totalAds = data.ads.length;
+            $scope.totalAds = data.numPages * data.ads.length;
     }
 
     function loadPage() {

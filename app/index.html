@@ -33,14 +33,14 @@
 <nav class="navbar-right">
     <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
         Categories :
-        <li class="active"><a href="#/">All</a></li>
-        <li data-ng-repeat="category in categories"  data-ng-click="sortByCategory(category)"><a href="#/">{{category.name}}</a></li>
+        <li class="active" data-ng-click="sortByCategory('')"><a>All</a></li>
+        <li data-ng-repeat="category in categories"  data-ng-click="sortByCategory(category.id)"><a>{{category.name}}</a></li>
     </ul>
    <!--Towns panel-->
     <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
         Towns :
-        <li class="active"><a href="#/">All</a></li>
-        <li data-ng-repeat="town in towns"  data-ng-click="sortByTown(town)"><a href="#/">{{town.name}}</a></li>
+        <li class="active" data-ng-click="sortByTown('')"><a>All</a></li>
+        <li data-ng-repeat="town in towns"  data-ng-click="sortByTown(town.id)"><a>{{town.name}}</a></li>
     </ul>
 </nav>
 <div data-ng-view=""></div>

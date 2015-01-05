@@ -14,16 +14,16 @@ app.controller('MainCtrl', function ($scope, userData, publicData) {
     };
 
     $scope.sortByCategory = function(category) {
-        $scope.selectedCategoryId = category.id;
+        $scope.selectedCategoryId = category;
     };
 
     $scope.sortByTown = function(town) {
-        $scope.selectedTownId = town.id;
+        $scope.selectedTownId = town;
     };
 
     $scope.$watch(function () {
         return sessionStorage;
-    }, function (newVal, oldVal) {
+    }, function() {
         $scope.currentUser = sessionStorage.username || '';
         $scope.isLogged = sessionStorage.length;
     }, true);

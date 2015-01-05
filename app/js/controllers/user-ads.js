@@ -22,10 +22,10 @@ app.controller('UserAdsCtrl', function($scope, adsUserData, $log) {
     $scope.createAdd = function() {
        var data = {
            title : $scope.title,
-           text : $scope.text
-           //imageDataUrl : null,
-           //categoryId : null,
-           //townId : null
+           text : $scope.text,
+           imageDataUrl : '',
+           categoryId : $scope.category.id,
+           townId : $scope.town.id
        };
 
         adsUserData.create(data)

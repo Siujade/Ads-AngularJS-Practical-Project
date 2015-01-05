@@ -4130,8 +4130,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination {
   display: block;
   padding-left: 0;
-  margin: 30px auto;
-  width:200px;
+  margin: 0 auto;
+  width:270px;
   border-radius: 4px;
 }
 .pagination > li {
@@ -4177,7 +4177,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   z-index: 2;
   color: #fff;
   cursor: default;
-  background-color: #428bca;
+  background-color: forestgreen;
   border-color: #428bca;
 }
 .pagination > .disabled > span,
