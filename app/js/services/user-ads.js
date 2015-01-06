@@ -1,28 +1,23 @@
 app.factory('adsUserData', function ($resource, $http) {
     $http.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.token;
-
-    var url = 'http://localhost:1337/api/user/ads';
     //var url = 'http://softuni-ads.azurewebsites.net/api/user/ads';
-    var resource = $resource(
-        url,
-        {id: '@id'},
+    var url = 'http://localhost:1337/api/user/ads';
+    var resource = $resource('http://localhost:1337/api/user/ads/:path/:id', null,
         {
-            update: {
-                method: 'GET'
+            update : {
+                method: 'PUT'
             }
         });
 
-    function getAllAds (startPage, status) {
-        var data = $resource(
-            url + "?status=" + status +"&pagesize=4&startpage=" + startPage,
-            {id: '@id'},
+    function getAllAds(startPage, status) {
+        var resource = $resource(url,
             {
-                update: {
-                    method: 'GET'
-                }
+                status: status,
+                pagesize: 4,
+                startpage: startPage
             });
 
-        return data.get();
+        return resource.get();
     }
 
     function createNewAd(ad) {
@@ -33,8 +28,13 @@ app.factory('adsUserData', function ($resource, $http) {
         return resource.get({id: id});
     }
 
-    function editAd(id, ad) {
-        return resource.update({id: id}, ad);
+    function editAd(id, action) {
+        var params = {
+            id: id,
+            path : action
+        };
+
+        return resource.update(params, {});
     }
 
     function deleteAd(id) {

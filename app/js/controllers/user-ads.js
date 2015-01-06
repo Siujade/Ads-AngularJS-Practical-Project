@@ -35,6 +35,13 @@ app.controller('UserAdsCtrl', function($scope, adsUserData, $log) {
         };
 
         adsUserData.create(data)
-    }
+    };
 
+    $scope.editAd = function(id, action){
+        adsUserData.edit(id, action);
+    };
+
+    $scope.deleteAd = function(id){
+        adsUserData.delete(id);
+    };
 });
