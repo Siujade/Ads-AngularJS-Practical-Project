@@ -8,7 +8,7 @@ app.controller('Users', function ($scope, userData, $log) {
             confirmPassword: $scope.repeatPassword,
             name: $scope.name,
             phoneNumber: $scope.phone,
-            townId: null //todo
+            townId: $scope.userTown
         };
     }
 

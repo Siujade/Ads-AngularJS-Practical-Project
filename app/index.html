@@ -9,7 +9,7 @@
 </head>
 <body  data-ng-controller="MainCtrl">
 <header data-ng-cloak>
-    <h1>{{loc}}<span>{{currentUser}}<a href="#/" data-ng-if="isLogged" data-ng-click="logout()">Logout</a></span></h1>
+    <h1>{{loc}}<span>{{currentUser}}<a href  data-ng-click="logout()" data-ng-if="isLogged">Logout</a></span></h1>
 </header>
 <nav class="navbar-left">
     <ul class="nav nav-pills nav-stacked" data-ng-cloak>
@@ -22,25 +22,25 @@
     </ul>
     <!--My adds section-->
     <ul class="nav nav-pills nav-stacked" data-ng-cloak data-ng-if="isLogged && loc == 'Ads - My Ads'">
-        <li class="active" ><a href="#/">All</a></li>
-        <li><a href="#/">Published</a></li>
-        <li><a href="#/">Waiting Approval</a></li>
-        <li><a href="#/">Inactive</a></li>
-        <li><a href="#/">Rejected</a></li>
+        <li class="active" ><a href data-ng-click="sortByStatus('')">All</a></li>
+        <li><a href data-ng-click="sortByStatus(2)">Published</a></li>
+        <li><a href data-ng-click="sortByStatus(1)">Waiting Approval</a></li>
+        <li><a href data-ng-click="sortByStatus(0)">Inactive</a></li>
+        <li><a href data-ng-click="sortByStatus(3)">Rejected</a></li>
     </ul>
 </nav>
     <!--Categories panel-->
-<nav class="navbar-right">
+<nav class="navbar-right" data-ng-if="loc == 'Ads - Home'">
     <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
         Categories :
         <li class="active" data-ng-click="sortByCategory('')"><a>All</a></li>
-        <li data-ng-repeat="category in categories"  data-ng-click="sortByCategory(category.id)"><a>{{category.name}}</a></li>
+        <li data-ng-repeat="category in categories" ><a href data-ng-click="sortByCategory(category.id)">{{category.name}}</a></li>
     </ul>
    <!--Towns panel-->
     <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
         Towns :
         <li class="active" data-ng-click="sortByTown('')"><a>All</a></li>
-        <li data-ng-repeat="town in towns"  data-ng-click="sortByTown(town.id)"><a>{{town.name}}</a></li>
+        <li data-ng-repeat="town in towns" ><a href data-ng-click="sortByTown(town.id)">{{town.name}}</a></li>
     </ul>
 </nav>
 <div data-ng-view=""></div>

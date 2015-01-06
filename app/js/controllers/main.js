@@ -7,10 +7,15 @@ app.controller('MainCtrl', function ($scope, userData, publicData) {
     $scope.towns = publicData.getAllTowns();
     $scope.selectedCategoryId = "";
     $scope.selectedTownId =  "";
+    $scope.selectedAdStatus = "";
 
     $scope.logout = function () {
         $scope.loc = 'Ads - Home';
         userData.logout();
+    };
+
+    $scope.sortByStatus = function(status){
+        $scope.selectedAdStatus = status;
     };
 
     $scope.sortByCategory = function(category) {

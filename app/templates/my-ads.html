@@ -1,9 +1,18 @@
 <div class="container" ng-heading="Ads - My Ads">
-    <div class="well add-panel  col-lg-6 col-md-5 col-sm-12" dir-paginate="ad in ads | itemsPerPage: 3" total-items="totalAds">
+    <div class="well add-panel  col-lg-6 col-md-5 col-sm-12" dir-paginate="ad in ads | itemsPerPage: data.ads.length" total-items="myTotalAds">
         <h2 class="title">{{ad.title}}<span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span></h2>
         <div class="img-responsive"><img data-ng-src="{{ad.imageDataUrl}}" /></div>
         <div class="text">{{ad.text}}</div>
-        <div class="text">{{ad.townId}}</div>
+        <div class="text">{{ad.categoryName}}</div>
+        <div class="text">{{ad.townName}}</div>
+        <div class="navbar-right">
+            Status : <br />
+            <div>{{ad.status}}</div>
+            <button data-ng-if="ad.status != 'Inactive'">Deactivate</button>
+            <button data-ng-if="ad.status == 'Inactive'">Edit</button>
+            <button data-ng-if="ad.status == 'Inactive'">Publish Again</button>
+            <button data-ng-if="ad.status == 'Inactive'">Delete</button>
+        </div>
     </div>
 </div>
 <dir-pagination-controls ng-cloak on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>

@@ -15,9 +15,8 @@
         <input type="tel" id="phone" class="form-control" placeholder="Telephone" required autofocus data-ng-model="phone">
         <div class="checkbox">
             <label>
-               <select>
-                   <option ng-repeat="town in towns" data-ng-model="town">{{town.name}}</option>
-               </select>
+                <select id="userTown" data-ng-options="town.name for town in towns track by town.id" data-ng-model="userTown">
+                    </select>
             </label>
         </div>
         <button class="btn btn-reg btn-primary btn-block" type="submit">Register</button>

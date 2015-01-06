@@ -12,10 +12,9 @@ app.factory('adsUserData', function ($resource, $http) {
             }
         });
 
-    function getAllAds(page) {
-        var startPage = page || 1;
+    function getAllAds (startPage, status) {
         var data = $resource(
-            url + "?pagesize=6&startpage=" + startPage,
+            url + "?status=" + status +"&pagesize=4&startpage=" + startPage,
             {id: '@id'},
             {
                 update: {
