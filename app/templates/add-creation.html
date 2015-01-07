@@ -1,10 +1,9 @@
 <form id="add-creation-form" data-ng-heading="Ads - Publish New Add">
     <label for="title">Title:</label>
     <input id="title" type="text" data-ng-model="title"> <br />
+    <div data-ng-display data-ng-model="imgUrl"></div>
     <label for="text">Text:</label>
     <textarea id="text" data-ng-model="text"> </textarea> <br />
-    <label for="img">Image:</label>
-    <input type="file" id="img">
     <label for="category">Category:</label>
     <select id="category" data-ng-options="category.name for category in categories track by category.id" data-ng-model="category">
     </select>

@@ -51,7 +51,7 @@ nav{
 
 #add-creation-form{
     display: block;
-    width:400px;
+    width:600px;
     margin: 0 auto;
 }
 
@@ -63,4 +63,14 @@ nav{
 
 a:hover{
     cursor: pointer;
+}
+.pictureBrowser{
+    float:right;
+    display: inline-block;
+}
+
+#preview{
+    background: pink;
+    width:150px;
+    height: 200px;
 }

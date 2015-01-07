@@ -28,10 +28,12 @@ app.controller('UserAdsCtrl', function ($scope, adsUserData, $log) {
         var data = {
             title: $scope.title,
             text: $scope.text,
-            imageDataUrl: '',
+            imageDataUrl: $scope.imgUrl,
             categoryId: $scope.category.id,
             townId: $scope.town.id
         };
+
+        console.log(data);
 
         adsUserData.create(data)
     };
