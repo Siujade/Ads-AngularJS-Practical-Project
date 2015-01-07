@@ -1,28 +1,27 @@
 app.factory('userData', function ($resource, $http) {
-    var rootUrl = 'http://localhost:1337/api/user/';
-  //  var rootUrl = 'http://softuni-ads.azurewebsites.net/api/user/';
-    var resource = '';
+    //var rootUrl = 'http://localhost:1337/api/user/';
+    var rootUrl = 'http://softuni-ads.azurewebsites.net/api/user/:path';
+    var resource = $resource('http://softuni-ads.azurewebsites.net/api/user/:path');
 
-    function setHeaders() {
-        $http.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.token;
+    function setHeaders(data) {
+        $http.defaults.headers.common['Authorization'] = 'Bearer ' + data['access_token'];
+        sessionStorage.token = 'Bearer ' + data['access_token'];
+        sessionStorage.username = data.username;
     }
 
-    function registerNewUser(userData, url) {
-        resource = $resource(rootUrl + url);
+    function registerNewUser(userData) {
 
-        return resource.save(userData);
+        return resource.save({path: 'register'}, userData);
     }
 
-    function login(userData, url) {
-        resource = $resource(rootUrl + url);
+    function login(userData) {
 
-        return resource.save(userData);
+        return resource.save({path: 'login'}, userData);
     }
 
     function logout() {
-        setHeaders();
-        resource = $resource(rootUrl + 'logout');
-        resource.save();
+        $http.defaults.headers.common['Authorization'] = sessionStorage.token;
+        resource.save({path: 'logout'},{});
         sessionStorage.clear();
         location.href = "#/home";
     }
@@ -41,6 +40,7 @@ app.factory('userData', function ($resource, $http) {
         logout : logout,
         register: registerNewUser,
         edit: editAd,
-        delete: deleteAd
+        delete: deleteAd,
+        setHeaders : setHeaders
     }
 });

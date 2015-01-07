@@ -1,24 +1,42 @@
-app.controller('Users', function ($scope, userData, $log) {
+app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
 
-    function getUserData() {
-        return {
-            username: $scope.username,
-            email: $scope.email,
-            password: $scope.password,
-            confirmPassword: $scope.repeatPassword,
-            name: $scope.name,
-            phoneNumber: $scope.phone,
-            townId: $scope.userTown
-        };
+    function getUserData(isLogin) {
+        if(isLogin) {
+            return {
+                username: $scope.username,
+                password: $scope.password
+            }
+        } else {
+            return {
+                username: $scope.username,
+                email: $scope.email,
+                password: $scope.password,
+                confirmPassword: $scope.repeatPassword,
+                name: $scope.name,
+                phoneNumber: $scope.phone,
+                townId: $scope.userTown.id
+            };
+        }
     }
 
-    $scope.userAction = function(action) {
-        userData.register(getUserData(), action)
+    $scope.login = function() {
+        userData.login(getUserData(true))
+            .$promise
+                .then(function (data) {
+                    userData.setHeaders(data);
+                    $location.path('#/home');
+                },
+                function (error) {
+                    $log.error(error);
+                });
+    };
+
+    $scope.register = function() {
+        userData.register(getUserData())
             .$promise
             .then(function (data) {
-                sessionStorage.token = data['access_token'];
-                sessionStorage.username = data.username;
-                location.href = ('#/home');
+                userData.setHeaders(data);
+                $location.path('#/home');
             },
             function (error) {
                 $log.error(error);

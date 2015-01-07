@@ -11,11 +11,11 @@ app.config(['$routeProvider',
                 templateUrl: "./templates/home.html"
             })
             .when('/login', {
-                controller: "Users",
+                controller: "UsersCtrl",
                 templateUrl: "./templates/login.html"
             })
             .when('/register', {
-                controller: "Users",
+                controller: "UsersCtrl",
                 templateUrl: "./templates/register.html"
             })
             .when('/my-ads', {

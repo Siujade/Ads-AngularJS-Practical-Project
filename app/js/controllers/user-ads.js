@@ -33,8 +33,6 @@ app.controller('UserAdsCtrl', function ($scope, adsUserData, $log) {
             townId: $scope.town.id
         };
 
-        console.log(data);
-
         adsUserData.create(data)
     };
 
