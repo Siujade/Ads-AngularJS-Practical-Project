@@ -1,0 +1,23 @@
+<form id="add-creation-form" data-ng-heading="Ads - Edit Ad">
+    <label for="title">Title:</label>
+    <input id="title" type="text" data-ng-model="selectedAdData.title"> <br/>
+    <label for="text">Text:</label>
+    <textarea id="text" data-ng-model="selectedAdData.text"> </textarea> <br/>
+    <label for="img">Image:</label>
+    <input type="file" id="img">
+    <label for="category">Category:</label>
+    <select id="category" data-ng-model="selectedAdData.categoryId">
+        <option data-ng-repeat="category in categories" data-ng-selected="category.name == selectedAdData.categoryName"
+                value="{{category.id}}" data-ng-init="selectedAdData.categoryId = value">{{category.name}}
+        </option>
+    </select>
+    <label for="town">Town:</label>
+    <select id="town" data-ng-model="selectedAdData.townId">
+        <option data-ng-repeat="town in towns" data-ng-selected="town.name == selectedAdData.townName"
+                value="{{town.id}}"
+                data-ng-init="selectedAdData.townId = value">{{town.name}}
+        </option>
+    </select> <br/>
+    <button data-ng-click="editAd(selectedAdData.id, null, selectedAdData)">Edit</button>
+    <button data-ng-click="">Cancel</button>
+</form>

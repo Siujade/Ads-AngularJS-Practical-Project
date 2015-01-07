@@ -1,4 +1,4 @@
-app.controller('MainCtrl', function ($scope, userData, publicData) {
+app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) {
     $scope.isLogged = false;
     $scope.currentUser = '';
     $scope.loc = 'Ads - Home';
@@ -12,6 +12,11 @@ app.controller('MainCtrl', function ($scope, userData, publicData) {
     $scope.logout = function () {
         $scope.loc = 'Ads - Home';
         userData.logout();
+    };
+
+    $scope.getAdData = function(id) {
+        $scope.selectedAdData = adsUserData.getAdById(id);
+        location.href="#/edit";
     };
 
     $scope.sortByStatus = function(status){
@@ -38,4 +43,5 @@ app.controller('MainCtrl', function ($scope, userData, publicData) {
 
         $scope.loc = heading;
     };
+
 });

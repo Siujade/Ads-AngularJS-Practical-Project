@@ -1,6 +1,5 @@
-app.controller('UserAdsCtrl', function($scope, adsUserData, $log) {
-
-    function displayData(data){
+app.controller('UserAdsCtrl', function ($scope, adsUserData, $log) {
+    function displayData(data) {
         $scope.data = data;
         $scope.ads = data.ads;
         $scope.myTotalAds = data.numPages * data.ads.length;
@@ -15,33 +14,48 @@ app.controller('UserAdsCtrl', function($scope, adsUserData, $log) {
             });
     }
 
-    $scope.$watch('selectedAdStatus',function(){
+    $scope.$watch('selectedAdStatus', function () {
         loadPage();
     });
 
-    $scope.pageChanged = function(newPage) {
+    $scope.pageChanged = function (newPage) {
         adsUserData.getAll(newPage, $scope.selectedAdStatus)
             .$promise
             .then(displayData);
     };
 
-    $scope.createAdd = function() {
+    $scope.createAdd = function () {
         var data = {
-            title : $scope.title,
-            text : $scope.text,
-            imageDataUrl : '',
-            categoryId : $scope.category.id,
-            townId : $scope.town.id
+            title: $scope.title,
+            text: $scope.text,
+            imageDataUrl: '',
+            categoryId: $scope.category.id,
+            townId: $scope.town.id
         };
 
         adsUserData.create(data)
     };
 
-    $scope.editAd = function(id, action){
-        adsUserData.edit(id, action);
+    $scope.editAd = function (id, action, ad) {
+            adsUserData.edit(id, action, ad);
     };
 
-    $scope.deleteAd = function(id){
+    $scope.deleteAd = function (id) {
         adsUserData.delete(id);
     };
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
