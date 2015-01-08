@@ -1,11 +1,16 @@
 .add-panel{
-    margin: 10px;
+    margin: 5px;
     max-width: 550px;
-    height: 400px;
+    height: 450px;
+    background: #A9D18E;
+    border: 2px solid #698A54;
 }
 
 .add-panel .title{
-    font-size: 25px;
+    font-weight: bolder;
+    font-size:25px;
+    margin: 30px auto 0;
+    width:500px;
     height: 50px;
 }
 
@@ -14,14 +19,44 @@
     float:right;
 }
 
-.add-panel img{
-    width:200px;
-   float:left;
+.inner-background{
+    border: 1px dotted #A9D18E;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.add-panel .picture{
+    background: #C5E0B4;
+    max-width:195px;
+    max-height: 300px;
+    float:left;
 }
 
 .add-panel .text{
-   background: lavender;
-    margin-bottom: 10px;
+    background: #C5E0B4;
+    overflow: hidden;
+    float:right;
+    width:290px;
+    max-height: 150px;
+
+}
+
+.add-panel .info{
+    background: #C5E0B4;
+    margin: 10px;
+    padding: 5px;
+    width:190px;
+    display: inline-block;
+    text-align: left;
+    font-weight: normal;
+}
+
+.info-div{
+    font-weight: bold;
+    float:right;
+    width:300px;
+    text-align: right;
 }
 
 .container{
@@ -29,14 +64,26 @@
     height: 900px;
 }
 
-header{
+#logout{
 
+}
+
+header{
+    border: 2px solid #698A54;
+    width:100%;
+    background: #A9D18E;
     text-align: center;
+    padding-bottom: 5px;
 }
 
 header > h1 > span{
-    float:right;
+    position: absolute;
+    margin: 10px 33%;
     font-size: 20px;
+}
+
+#logout > a{
+    margin-left: 15px;
 }
 
 nav{

@@ -29,6 +29,7 @@ app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) 
                     phoneNumber : data.phoneNumber,
                     townId : data.townId
                 };
+
                 $scope.userPasswords = {
                     oldPassword : '',
                     newPassword : '',

@@ -9,7 +9,7 @@
 </head>
 <body  data-ng-controller="MainCtrl">
 <header data-ng-cloak>
-    <h1>{{loc}}<span>{{currentUser}}<a href  data-ng-click="logout()" data-ng-if="isLogged">Logout</a></span></h1>
+    <h1>{{loc}}<span id="logout">{{currentUser}}<a href  data-ng-click="logout()" data-ng-if="isLogged">Logout</a></span></h1>
 </header>
 <nav class="navbar-left">
     <ul class="nav nav-pills nav-stacked" data-ng-cloak>
