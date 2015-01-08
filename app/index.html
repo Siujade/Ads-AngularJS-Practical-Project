@@ -11,7 +11,7 @@
 <header data-ng-cloak>
     <h1>{{loc}}<span id="logout">{{currentUser}}<a href  data-ng-click="logout()" data-ng-if="isLogged">Logout</a></span></h1>
 </header>
-<nav class="navbar-left">
+<nav class="navbar-left outer-background"><h3 class="title-heading">Navigation</h3>
     <ul class="nav nav-pills nav-stacked" data-ng-cloak>
         <li class="active" data-ng-click="changeHeading('Ads - Home')"><a href="#/">Home</a></li>
         <li  data-ng-if="!isLogged"><a href="#/login">Login</a></li>
@@ -30,15 +30,14 @@
     </ul>
 </nav>
     <!--Categories panel-->
-<nav class="navbar-right" data-ng-if="loc == 'Ads - Home'">
+<nav class="navbar-right outer-background" data-ng-if="loc == 'Ads - Home'"><h3 class="title-heading">Categories</h3>
     <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
-        Categories :
         <li class="active" data-ng-click="sortByCategory('')"><a>All</a></li>
         <li data-ng-repeat="category in categories" ><a href data-ng-click="sortByCategory(category.id)">{{category.name}}</a></li>
     </ul>
    <!--Towns panel-->
+    <h3 class="title-heading">Towns</h3>
     <ul class="nav nav-pills nav-stacked nav-right" data-ng-cloak>
-        Towns :
         <li class="active" data-ng-click="sortByTown('')"><a>All</a></li>
         <li data-ng-repeat="town in towns" ><a href data-ng-click="sortByTown(town.id)">{{town.name}}</a></li>
     </ul>

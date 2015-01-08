@@ -1706,10 +1706,10 @@ output {
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: forestgreen;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgba(102, 155, 0, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgba(62, 175, 0, .6);
 }
 .form-control::-moz-placeholder {
   color: #999;
@@ -2122,7 +2122,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success {
   color: #fff;
-  background-color: #5cb85c;
+  background-color: #A9D18E;
   border-color: #4cae4c;
 }
 .btn-success:hover,
@@ -2131,7 +2131,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: #fff;
-  background-color: #47a447;
+  background-color: #A9D18E;
   border-color: #398439;
 }
 .btn-success:active,
@@ -4131,7 +4131,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: block;
   padding-left: 0;
   margin: 0 auto;
-  width:270px;
+  width:500px;
   border-radius: 4px;
 }
 .pagination > li {

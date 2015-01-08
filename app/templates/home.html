@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="add-panel col-lg-6 col-md-5 col-sm-12" dir-paginate="ad in ads | itemsPerPage: data.ads.length"
+    <div class="add-panel outer-background col-lg-6 col-md-5 col-sm-12" dir-paginate="ad in ads | itemsPerPage: data.ads.length"
          total-items="totalAds">
         <h2 class="title">{{ad.title}}<span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span></h2>
         <img class="inner-background picture" data-ng-src="{{ad.imageDataUrl}}"/>
@@ -12,5 +12,5 @@
     <!--<div class="text">{{categories[ad.categoryId - 1].name}}</div>-->
     <!--<div class="text">{{towns[ad.townId - 1].name}}</div>-->
 </div>
+    <dir-pagination-controls ng-cloak on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
 </div>
-<dir-pagination-controls ng-cloak on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
