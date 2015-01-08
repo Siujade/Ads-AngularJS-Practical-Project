@@ -1,3 +1,33 @@
+/*Multy ussage*/
+.outer-background{
+    background: #A9D18E;
+    border: 2px solid #698A54;
+}
+
+.inner-background{
+    border: 1px dotted #A9D18E;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 5px;
+}
+
+.title-heading{
+    text-align: center;
+    margin: 20px auto;
+    width: 70%;
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px inset #69944D;
+}
+
+.double-div{
+    margin-left: 70px;
+    margin-right: -60px;
+    display:inline-block;
+    width:430px;
+}
+
 .add-panel{
     margin: 5px;
     max-width: 550px;
@@ -9,7 +39,7 @@
     font-size:22px;
     margin: 20px 0 0 auto;
     width:500px;
-    height: 50px;
+    height: 35px;
 }
 
 .add-panel .date{
@@ -32,7 +62,6 @@
     max-height: 150px;
 
 }
-
 .add-panel .info{
     background: #C5E0B4;
     margin: 10px;
@@ -42,26 +71,100 @@
     font-weight: normal;
 }
 
-/*Multy ussage*/
-.outer-background{
-    background: #A9D18E;
-    border: 2px solid #698A54;
-}
-
-.inner-background{
-    border: 1px dotted #A9D18E;
+/*AddCreation*/
+.add-creation-form{
     border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
+    width:650px;
+    margin: 20px auto;
+    text-align: right;
+    max-height: 650px;
 }
 
-.title-heading{
-    font-weight: bold;
-    font-size: 25px;
-    padding-bottom: 15px;
-    border-bottom: 3px inset #69944D;
+.add-creation-form input,
+.add-creation-form textarea,
+.add-creation-form .image-data  {
+    border: 1px solid forestgreen;
+    display: inline;
+    font-size: 18px;
+    height: 45px;
+    border-radius: 5px;
+    width:300px;
+    margin-bottom: 15px;
+    outline: none;
+    margin-right: 210px;
+}
+.add-creation-form select {
+    width: 80%;
+    border: 1px solid forestgreen;
+    display: inline;
+    font-size: 18px;
+    height: 45px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
 }
 
+.add-creation-form .image-data{
+    overflow: hidden;
+    line-height: 44px;
+    font-size: 20px;
+    margin-right: 215px;
+    display: inline-block;
+    background: #f5f5f5;
+    padding-right:25px;
+    vertical-align: middle;
+}
+
+.add-creation-form #text{
+    resize: none;
+    vertical-align: middle;
+    height: 130px;
+}
+
+.add-creation-form  label{
+     text-align: right;
+     margin: 10px;
+     font-size: 20px;
+ }
+
+.add-creation-form button{
+    width:200px;
+    height: 50px;
+    margin: 50px 100px 0 -100px;
+    display: inline-block;
+}
+
+.pictureBrowser{
+    position: relative;
+    left:454px;
+    bottom:300px;
+    padding: 0;
+}
+
+.uploader {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    padding: 5px;
+    font-size: 40px;
+}
+
+.uploader input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+#browse-btn{
+    height: 50px;
+    width: 140px;
+    font-size: 20px;
+}
 
 
 .info-div{
@@ -75,7 +178,6 @@
     margin: 0 auto;
     height: 700px;
 }
-
 
 header{
     border: 2px solid #698A54;
@@ -117,39 +219,70 @@ nav ul{
 }
 
 /*Login Register Panels*/
+
 .form-signin{
-    width:500px;
+    width:450px;
     border-radius: 10px;
-    margin: 50px auto;
+    margin: 15px auto;
 }
-.form-signin h2{
-    width:350px;
-    text-align: center;
-    margin: 20px auto;
-}
-.form-signin input{
-    margin:0 auto;
-    font-size: 18px;
-    height: 45px;
-    width:350px;
-}
-.form-signin label{
-    display: inline;
-    font-size: 20px;
-    margin-left: 75px;
+.form-register h2{
+   width:81%;
 }
 
-.form-signin button{
+.form-signin input, .form-register input, .form-register select{
+    font-size: 18px;
+    height: 45px;
+    border-radius: 5px;
+    width:320px;
+    margin: 0 auto;
+    outline: none;
+}
+.form-register select{
+    margin-left: 5px;
+}
+
+.form-signin label{
+    font-size: 20px;
+    margin-left: 63px;
+    margin-bottom: 10px;
+}
+
+.form-register label{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.form-signin button,.form-register button{
     display: inline;
+    font-size: 22px;
     padding: 0;
-    margin: 25px 75px 15px 75px;
+    margin: 25px 45px 25px 63px;
     height: 55px;
     width:150px;
 }
 
-.form-signin> a{
-    font-size: 18px;
+.form-register button{
+    height: 65px;
+    width:170px;
+    margin: 45px 105px 45px 170px;
+}
+
+.form-signin > a, .form-register a{
+    font-size: 21px;
     display: inline;
+}
+
+.form-register{
+    width:820px;
+    border-radius: 10px;
+    margin: 15px auto;
+}
+
+.form-register div{
+    margin-left: 70px;
+    margin-right: -60px;
+    display:inline-block;
+    width:330px;
 }
 
 #add-creation-form{
@@ -164,17 +297,14 @@ nav ul{
     resize: none;
 }
 
-
 a:hover{
     cursor: pointer;
 }
-.pictureBrowser{
-    float:right;
-    display: inline-block;
-}
 
 #preview{
-    background: pink;
+    left:5px;
+    top:-219px;
+    position: absolute;
     width:150px;
     height: 200px;
 }

@@ -6,7 +6,10 @@ app.directive('ngDisplay', [function () {
         templateUrl: './templates/browse.html',
         link: function (scope, element, attrs) {
 
-            $('#browser').change(function(){
+            var $browser =  $('#browser');
+
+            $browser.change(function(){
+                $('.image-data').text($browser.val());
                 readURL(this)
             });
 
@@ -17,7 +20,7 @@ app.directive('ngDisplay', [function () {
                     reader.onload = function (e) {
                         scope.imgUrl = reader.result;
 
-                        $('#preview').css('backgroundImage', 'url(' + e.target.result + ')');
+                        $('#preview').attr('src', e.target.result);
                     };
                     reader.readAsDataURL(input.files[0]);
                 } else {

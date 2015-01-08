@@ -1,15 +1,22 @@
-<form id="add-creation-form" data-ng-heading="Ads - Publish New Add">
+<form class="add-creation-form outer-background" data-ng-heading="Ads - Publish New Add">
+    <h2 class="title-heading">Publish New Add</h2>
     <label for="title">Title:</label>
-    <input id="title" type="text" data-ng-model="title"> <br />
-    <div data-ng-display data-ng-model="imgUrl"></div>
+    <input id="title" class="form-control" type="text" data-ng-model="title"> <br />
     <label for="text">Text:</label>
-    <textarea id="text" data-ng-model="text"> </textarea> <br />
+    <textarea id="text" class="form-control" data-ng-model="text"></textarea> <br />
+    <label>Image:</label>
+    <span class="image-data"></span><br />
     <label for="category">Category:</label>
     <select id="category" data-ng-options="category.name for category in categories track by category.id" data-ng-model="category">
-    </select>
+    </select><br />
     <label for="town">Town:</label>
     <select id="town" data-ng-options="town.name for town in towns track by town.id" data-ng-model="town">
-    </select> <br />
-    <button data-ng-click="createAdd()">Publish</button>
-    <button>Cancel</button>
+    </select>
+    <br />
+    <button data-ng-click="createAdd()" class="btn btn-lg btn-success">Publish</button>
+    <button class="btn btn-lg btn-success">Cancel</button>
+    <div class="buttons"></div>
+    <div data-ng-display data-ng-model="imgUrl"></div>
 </form>
+
+
