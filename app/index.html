@@ -18,7 +18,7 @@
         <li  data-ng-if="!isLogged"><a href="#/register">Register</a></li>
         <li  data-ng-if="isLogged"><a href="#/my-ads">My Ads</a></li>
         <li  data-ng-if="isLogged"><a href="#/new-ad">Publish New Ad</a></li>
-        <li  data-ng-if="isLogged"><a href="#/profile">Edit Profile</a></li>
+        <li  data-ng-if="isLogged" data-ng-click="getUserData()"><a href="#/profile">Edit Profile</a></li>
     </ul>
     <!--My adds section-->
     <ul class="nav nav-pills nav-stacked" data-ng-cloak data-ng-if="isLogged && loc == 'Ads - My Ads'">

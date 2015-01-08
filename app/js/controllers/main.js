@@ -19,6 +19,24 @@ app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) 
         location.href="#/edit";
     };
 
+    $scope.getUserData = function() {
+        userData.getData()
+            .$promise
+            .then(function (data) {
+                $scope.userData = {
+                    name : data.name,
+                    email : data.email,
+                    phoneNumber : data.phoneNumber,
+                    townId : data.townId
+                };
+                $scope.userPasswords = {
+                    oldPassword : '',
+                    newPassword : '',
+                    confirmPassword : ''
+                }
+            });
+    };
+
     $scope.sortByStatus = function(status){
         $scope.selectedAdStatus = status;
     };
@@ -43,5 +61,4 @@ app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) 
 
         $scope.loc = heading;
     };
-
 });

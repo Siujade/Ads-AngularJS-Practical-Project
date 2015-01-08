@@ -6,9 +6,6 @@ app.config(['$routeProvider',
             .when('/', {
                 controller: "LoadResourcesCtrl",
                 templateUrl: "./templates/home.html"
-            }).when('/user',{
-                controller: "UserAdsCtrl",
-                templateUrl: "./templates/home.html"
             })
             .when('/login', {
                 controller: "UsersCtrl",
@@ -17,6 +14,14 @@ app.config(['$routeProvider',
             .when('/register', {
                 controller: "UsersCtrl",
                 templateUrl: "./templates/register.html"
+            })
+            .when('/profile', {
+                controller: "UsersCtrl",
+                templateUrl: "./templates/profile.html"
+            })
+            .when('/user',{
+                controller: "UserAdsCtrl",
+                templateUrl: "./templates/home.html"
             })
             .when('/my-ads', {
                 controller: "UserAdsCtrl",
@@ -30,7 +35,6 @@ app.config(['$routeProvider',
                 controller: "UserAdsCtrl",
                 templateUrl: "./templates/add-edit.html"
             })
-
             .otherwise({redirectTo: '/'});
     }
 ]);

@@ -1,24 +1,40 @@
-<div class="container" ng-heading="Ads - Register">
-    <form class="form-register" data-ng-submit="userAction('register')">
-        <h2 class="form-register-heading">Please register</h2>
-        <label for="userName" class="sr-only">Username</label>
-        <input type="text" id="userName" class="form-control" placeholder="Username" required autofocus data-ng-model="username">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required data-ng-model="password">
-        <label for="reInputPassword" class="sr-only">Password</label>
-        <input type="password" id="reInputPassword" class="form-control" placeholder="RePassword" required data-ng-model="repeatPassword">
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus data-ng-model="email">
-        <label for="realName" class="sr-only">Username</label>
-        <input type="text" id="realName" class="form-control" placeholder="Name" required autofocus data-ng-model="name">
-        <label for="phone" class="sr-only">Username</label>
-        <input type="tel" id="phone" class="form-control" placeholder="Telephone" required autofocus data-ng-model="phone">
+<div class="container" ng-heading="Ads - Edit User Profile">
+    <form class="form-edit-info">
+        <h2 class="form-register-heading">Edit Profile</h2>
+        <label for="realName">Name</label>
+        <input type="text" id="realName" class="form-control" placeholder="Name" required autofocus
+               data-ng-model="userData.name">
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus
+               data-ng-model="userData.email">
+        <label for="phone">Telephone</label>
+        <input type="tel" id="phone" class="form-control" placeholder="Telephone" required autofocus
+               data-ng-model="userData.phoneNumber">
+
         <div class="checkbox">
             <label>
-                <select id="userTown" data-ng-options="town.name for town in towns track by town.id" data-ng-model="userTown">
+                <select id="town" data-ng-model="userData.townId">
+                    <option data-ng-repeat="town in towns" data-ng-selected="town.name == towns[userData.townId].name"
+                            value="{{town.id}}" data-ng-init="userData.townId = value">{{town.name}}
+                    </option>
                 </select>
             </label>
         </div>
-        <button class="btn btn-reg btn-primary btn-block" type="submit">Register</button>
+        <button class="btn btn-primary btn-block" data-ng-click="editProfile(userData)" type="button">Update</button>
+        <button class="btn btn-primary btn-block" type="submit">Cancel</button>
+    </form>
+    <form class="change-password">
+        <h2 class="form-register-heading">Change Password</h2>
+        <label for="oldPassword">Old password</label>
+        <input type="password" id="oldPassword" class="form-control" placeholder="Old Password" required
+               data-ng-model="userPasswords.oldPassword">
+        <label for="newPassword">New password</label>
+        <input type="password" id="newPassword" class="form-control" placeholder="newPassword" required
+               data-ng-model="userPasswords.newPassword">
+        <label for="confirmPassword">Confirm new password</label>
+        <input type="password" id="confirmPassword" class="form-control" placeholder="Password" required
+               data-ng-model="userPasswords.confirmPassword">
+        <button class="btn btn-primary btn-block" type="button" data-ng-click="changePassword(userPasswords)">Change Password</button>
+        <button class="btn btn-primary btn-block" type="submit">Cancel</button>
     </form>
 </div>

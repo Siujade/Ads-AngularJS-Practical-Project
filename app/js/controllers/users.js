@@ -1,6 +1,6 @@
 app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
 
-    function getUserData(isLogin) {
+    function getAuthData(isLogin) {
         if(isLogin) {
             return {
                 username: $scope.username,
@@ -20,7 +20,7 @@ app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
     }
 
     $scope.login = function() {
-        userData.login(getUserData(true))
+        userData.login(getAuthData(true))
             .$promise
                 .then(function (data) {
                     userData.setHeaders(data);
@@ -32,7 +32,7 @@ app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
     };
 
     $scope.register = function() {
-        userData.register(getUserData())
+        userData.register(getAuthData())
             .$promise
             .then(function (data) {
                 userData.setHeaders(data);
@@ -41,5 +41,13 @@ app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
             function (error) {
                 $log.error(error);
             });
+    };
+
+    $scope.editProfile = function(data) {
+        userData.editProfile(data)
+    };
+
+    $scope.changePassword = function(data) {
+        userData.changePassword(data)
     };
 });
