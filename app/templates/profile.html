@@ -1,40 +1,42 @@
 <div class="container" ng-heading="Ads - Edit User Profile">
-    <form class="form-edit-info">
-        <h2 class="form-register-heading">Edit Profile</h2>
+    <form class="col-lg-6 col-md-5 col-sm-12 form-edit-info outer-background" data-ng-submit="editProfile(userData)">
+        <h2 class="title-heading">Edit profile</h2>
         <label for="realName">Name</label>
-        <input type="text" id="realName" class="form-control" placeholder="Name" required autofocus
+        <input type="text" id="realName" class="form-control"  required autofocus
                data-ng-model="userData.name">
         <label for="inputEmail">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus
+        <input type="email" id="inputEmail" class="form-control" required autofocus
                data-ng-model="userData.email">
         <label for="phone">Telephone</label>
-        <input type="tel" id="phone" class="form-control" placeholder="Telephone" required autofocus
+        <input type="tel" id="phone" class="form-control"  autofocus
                data-ng-model="userData.phoneNumber">
-
+        <label for="town">Town</label>
         <div class="checkbox">
-            <label>
                 <select id="town" data-ng-model="userData.townId">
                     <option data-ng-repeat="town in towns" data-ng-selected="town.name == towns[userData.townId].name"
                             value="{{town.id}}" data-ng-init="userData.townId = value">{{town.name}}
                     </option>
                 </select>
-            </label>
         </div>
-        <button class="btn btn-primary btn-block" data-ng-click="editProfile(userData)" type="button">Update</button>
-        <button class="btn btn-primary btn-block" type="submit">Cancel</button>
+        <div class="centered">
+        <button class="btn btn-lg btn-success" type="submit">Update</button>
+        <button class="btn btn-lg btn-success" type="reset">Cancel</button>
+            </div>
     </form>
-    <form class="change-password">
-        <h2 class="form-register-heading">Change Password</h2>
+    <form class="col-lg-6 col-md-5 col-sm-12 change-password outer-background" data-ng-submit="changePassword(userPasswords)">
+        <h2 class="title-heading">Change Password</h2>
         <label for="oldPassword">Old password</label>
-        <input type="password" id="oldPassword" class="form-control" placeholder="Old Password" required
+        <input type="password" id="oldPassword" class="form-control"  required
                data-ng-model="userPasswords.oldPassword">
         <label for="newPassword">New password</label>
-        <input type="password" id="newPassword" class="form-control" placeholder="newPassword" required
+        <input type="password" id="newPassword" class="form-control" required
                data-ng-model="userPasswords.newPassword">
         <label for="confirmPassword">Confirm new password</label>
-        <input type="password" id="confirmPassword" class="form-control" placeholder="Password" required
+        <input type="password" id="confirmPassword" class="form-control" required
                data-ng-model="userPasswords.confirmPassword">
-        <button class="btn btn-primary btn-block" type="button" data-ng-click="changePassword(userPasswords)">Change Password</button>
-        <button class="btn btn-primary btn-block" type="submit">Cancel</button>
+        <div class="centered">
+        <button class="btn btn-lg btn-success" type="submit">Change Password</button>
+        <button class="btn btn-lg btn-success" type="reset">Cancel</button>
+        </div>
     </form>
 </div>

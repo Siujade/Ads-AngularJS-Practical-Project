@@ -15,7 +15,7 @@ app.factory('adsUserData', function ($resource, $http) {
         var resource = $resource(url,
             {
                 status: status,
-                pagesize: 4,
+                pagesize: 2,
                 startpage: startPage
             });
 
