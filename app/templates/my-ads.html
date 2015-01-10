@@ -1,8 +1,8 @@
 <div class="container" ng-heading="My Ads">
     <div class="my-add outer-background add-panel" dir-paginate="ad in ads | itemsPerPage: data.ads.length" total-items="myTotalAds">
         <div class="content-div">
-              <h2 class="title">{{ad.title}}<span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span></h2>
-              <img class="inner-background picture" data-ng-src="{{ad.imageDataUrl}}"/>
+              <h2 class="title">{{ad.title}}</h2><span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span>
+              <img class="inner-background picture" data-ng-src="{{ad.imageDataUrl || 'resources/images/no_image.jpg'}}"/>
               <div class="text inner-background">{{ad.text}}</div>
               <div class="info-div">
                      Category:<span class="info inner-background">{{ad.categoryName}}</span><br>

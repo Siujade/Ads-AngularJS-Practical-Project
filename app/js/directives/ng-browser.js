@@ -1,5 +1,3 @@
-"use strict";
-
 app.directive('ngDisplay', [function () {
     return {
         restrict: 'A',

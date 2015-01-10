@@ -27,6 +27,10 @@ app.config(['$routeProvider',
                 controller: "UserAdsCtrl",
                 templateUrl: "./templates/my-ads.html"
             })
+            .when('/my-ads/:path', {
+                controller: "UserAdsCtrl",
+                templateUrl: "./templates/my-ads.html"
+            })
             .when('/new-ad', {
                 controller: "UserAdsCtrl",
                 templateUrl: "./templates/add-creation.html"

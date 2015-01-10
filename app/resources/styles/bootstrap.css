@@ -288,7 +288,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #000000;
   text-decoration: none;
 }
 a:hover,
@@ -1897,6 +1897,8 @@ select[multiple].input-lg {
 .has-error .radio-inline,
 .has-error .checkbox-inline {
   color: #a94442;
+  border: 2px solid red;
+  background: red;
 }
 .has-error .form-control {
   border-color: #a94442;
@@ -2285,7 +2287,7 @@ fieldset[disabled] .btn-danger.active {
 }
 .btn-link {
   font-weight: normal;
-  color: #428bca;
+  color: black;
   cursor: pointer;
   border-radius: 0;
 }
@@ -3460,11 +3462,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: block;
   padding: 10px 15px;
 }
-.nav > li > a:hover,
-.nav > li > a:focus {
+.nav > li > a:hover{
   text-decoration: none;
-  background-color: lightsalmon;
+  background-color: gold;
+  opacity: 0.4;
 }
+.nav > li > a:focus{
+  text-decoration: none;
+}
+
 .nav > li.disabled > a {
   color: #999;
 }
@@ -3571,8 +3577,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+  color: #000000;
+  background-color: gold;
 }
 .nav-stacked > li {
   float: none;
@@ -5784,5 +5790,8 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+.has-error{
+  border: 1px solid red;
 }
 /*# sourceMappingURL=bootstrap.css.map */

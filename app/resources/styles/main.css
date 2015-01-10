@@ -35,16 +35,25 @@
 }
 
 .add-panel .title{
+    overflow: hidden;
     font-weight: bolder;
     font-size:22px;
-    margin: 20px 0 0 auto;
-    width:500px;
-    height: 35px;
+    margin: 20px 0 0 0;
+    display: inline-block;
+    width:405px;
+    line-height: 20px;
+    height: 25px;
 }
 
 .add-panel .date{
-   font-size: 17px;
-    float:right;
+    height: 25px;
+    display: inline-block;
+    font-weight: bolder;
+    width:100px;
+    font-size: 17px;
+    position: relative;
+    left:5px;
+    bottom:10px;
 }
 
 .add-panel .picture{
@@ -462,6 +471,7 @@ nav ul{
    display: block;
     margin-left:0;
 }
+
 
 ::-webkit-scrollbar {
     width: 15px;

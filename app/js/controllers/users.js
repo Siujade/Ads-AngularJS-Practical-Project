@@ -1,4 +1,4 @@
-app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
+app.controller('UsersCtrl', function ($scope, $location, userData) {
 
     function getAuthData(isLogin) {
         if(isLogin) {
@@ -7,14 +7,19 @@ app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
                 password: $scope.password
             }
         } else {
+            var userTown = null;
+
+            if($scope.userTown) {
+                userTown = $scope.userTown.id;
+            }
             return {
                 username: $scope.username,
                 email: $scope.email,
                 password: $scope.password,
                 confirmPassword: $scope.repeatPassword,
                 name: $scope.name,
-                phoneNumber: $scope.phone,
-                townId: $scope.userTown.id
+                phoneNumber: $scope.phone || '',
+                townId: userTown
             };
         }
     }
@@ -27,7 +32,7 @@ app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
                     $location.path('#/home');
                 },
                 function (error) {
-                    $log.error(error);
+                 $scope.msgBox.error(error.data.error_description);
                 });
     };
 
@@ -39,7 +44,7 @@ app.controller('UsersCtrl', function ($scope, $location, userData, $log) {
                 $location.path('#/home');
             },
             function (error) {
-                $log.error(error);
+               // $scope.msgBox.error(error.data.error_description);
             });
     };
 

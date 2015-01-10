@@ -1,13 +1,13 @@
 <div class="container" data-ng-heading="Home">
     <div class="add-panel outer-background col-lg-6 col-md-5 col-sm-12" dir-paginate="ad in ads | itemsPerPage: data.ads.length"
          total-items="totalAds">
-        <h2 class="title">{{ad.title}}<span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span></h2>
-        <img class="inner-background picture" data-ng-src="{{ad.imageDataUrl}}"/>
+        <h2 class="title">{{ad.title}}</h2><span class="date">{{ad.date | date:'dd-MMM-yyyy'}}</span>
+        <img class="inner-background picture" data-ng-src="{{ad.imageDataUrl || 'resources/images/no_image.jpg'}}"/>
         <div class="text inner-background">{{ad.text}}</div>
         <div class="info-div">
         Author:<span class="info inner-background">{{ad.ownerName}}</span><br>
         Email:<span class="info inner-background">{{ad.ownerEmail}}</span><br>
-        Telphone:<span class="info inner-background">{{ad.ownerPhone}}</span>
+        Telphone:<span class="info inner-background">{{ad.ownerPhone || "No information"}}</span>
     </div>
     <!--<div class="text">{{categories[ad.categoryId - 1].name}}</div>-->
     <!--<div class="text">{{towns[ad.townId - 1].name}}</div>-->

@@ -1,6 +1,7 @@
-app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) {
+app.controller('MainCtrl', function ($scope, $location, $route, userData, publicData, adsUserData) {
     $scope.isLogged = false;
     $scope.currentUser = '';
+    $scope.msgBox = {};
     $scope.loc = 'Ads - Home';
     $scope.pagination = {current: 1};
     $scope.categories = publicData.getAllCategories();
@@ -52,6 +53,10 @@ app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) 
         $scope.selectedTownId = town;
     };
 
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
+
     $scope.$watch(function () {
         return sessionStorage;
     }, function() {
@@ -61,5 +66,9 @@ app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) 
 
     $scope.changeHeading = function (heading) {
         $scope.loc = 'Ads - ' + heading;
+
+         //Remove these to navigate back to the last selected category and town.
+        $scope.selectedCategoryId = '';
+        $scope.selectedTownId = '';
     };
 });

@@ -1,26 +1,33 @@
 <div class="container" ng-heading="Register">
-    <form class="form-register outer-background" data-ng-submit="register()">
+    <form name="formRegister" class="form-register outer-background" data-ng-submit="register()">
         <h2 class="title-heading">Register</h2>
         <div class="left">
         <label for="userName">Username</label>
-        <input type="text" id="userName" class="form-control" required autofocus data-ng-model="username">
+        <input type="text" name="username" id="userName" class="form-control"
+               data-ng-class="{'has-error': formRegister.username.$invalid && formRegister.username.$dirty}"
+               required autofocus data-ng-model="username" ng-minlength="3" ng-maxlength="10">
             <label for="inputPassword" >Password</label>
-            <input type="password" id="inputPassword" class="form-control" required data-ng-model="password">
+            <input name="password" type="password" id="inputPassword" class="form-control"
+                   data-ng-class="{'has-error': formRegister.password.$invalid && formRegister.password.$dirty}"
+                   required data-ng-model="password" ng-minlength="3" ng-maxlength="10">
             <label for="realName">Name</label>
-            <input type="text" id="realName" class="form-control" required autofocus data-ng-model="name">
+            <input name="name" required type="text" id="realName" class="form-control" data-ng-class="{'has-error': formRegister.name.$invalid && formRegister.name.$dirty}"
+                   autofocus data-ng-model="name" ng-minlength="3" ng-maxlength="10">
             <label for="phone">Telephone</label>
-            <input type="tel" id="phone" class="form-control" required autofocus data-ng-model="phone">
+            <input name="tel" type="tel" id="phone" class="form-control" data-ng-class="{'has-error': formRegister.tel.$invalid && formRegister.tel.$dirty}"
+                   autofocus data-ng-model="phone" ng-minlength="5" ng-maxlength="10">
         </div>
         <div class="right">
         <label  for="reInputPassword" >Password</label><br />
-        <input type="password" id="reInputPassword" class="form-control" required data-ng-model="repeatPassword">
+        <input name="rePassword" type="password" id="reInputPassword" data-ng-class="{'has-error': repeatPassword != password}"
+               class="form-control" required data-ng-model="repeatPassword" ng-minlength="3" ng-maxlength="10">
         <label class="right-label" for="inputEmail" >Email address</label>
-        <input type="email" id="inputEmail" class="form-control" required autofocus data-ng-model="email">
+        <input type="email" id="inputEmail" class="form-control" required autofocus data-ng-model="email" ng-minlength="3">
             <label for="userTown" class="right-label" >Town</label><br />
             <select id="userTown" data-ng-options="town.name for town in towns track by town.id" data-ng-model="userTown">
             </select>
         </div>
-        <button class="btn btn-reg btn-success btn-block" type="submit">Register</button>
+        <button  class="btn btn-reg btn-success btn-block" type="submit">Register</button>
         <a class="btn-link" href="#/login">Login here</a>
     </form>
 </div>
