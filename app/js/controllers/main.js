@@ -27,8 +27,10 @@ app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) 
                     name : data.name,
                     email : data.email,
                     phoneNumber : data.phoneNumber,
-                    townId : data.townId
-                };
+                    townId : data.townId,
+                    imageDataUrl : data.imageDataUrl,
+                    changeImage : false
+            };
 
                 $scope.userPasswords = {
                     oldPassword : '',
@@ -58,8 +60,6 @@ app.controller('MainCtrl', function ($scope, userData, publicData, adsUserData) 
     }, true);
 
     $scope.changeHeading = function (heading) {
-        $('.active').attr('class', '');
-
-        $scope.loc = heading;
+        $scope.loc = 'Ads - ' + heading;
     };
 });

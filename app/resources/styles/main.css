@@ -75,7 +75,7 @@
 .add-creation-form{
     border-radius: 5px;
     width:650px;
-    margin: 20px auto;
+    margin: 20px auto 90px auto;
     text-align: right;
     max-height: 650px;
 }
@@ -134,9 +134,10 @@
     display: inline-block;
 }
 
+
 .pictureBrowser{
     position: relative;
-    left:454px;
+    left:443px;
     bottom:300px;
     padding: 0;
 }
@@ -305,12 +306,18 @@ nav ul{
     resize: none;
 }
 
-#preview{
-    left:5px;
-    top:-219px;
-    position: absolute;
+.div-right .preview{
     width:150px;
     height: 200px;
+    position: static;
+}
+
+#ad-create .preview{
+    width:150px;
+    height: 200px;
+    position: relative;
+    bottom:555px;
+    right: 50px;
 }
 
 /*Profile edit*/
@@ -345,7 +352,6 @@ nav ul{
     width:8em;
 }
 
-
 /*My add*/
 .my-add{
     margin: 10px auto;
@@ -366,7 +372,6 @@ nav ul{
 .my-add .status-span{
     margin: 10px 0 10px 40px;
 }
-
 
 .status-div{
     vertical-align:middle;
@@ -394,6 +399,68 @@ nav ul{
     height: 43px;
     text-align: center;
     margin: 10px 10px;
+}
+
+
+/*Edit Add*/
+
+.add-edit-form{
+    width:820px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.add-edit-form .image-data{
+    margin:0 5px 0 0;
+}
+
+.add-edit-form textarea,
+.add-edit-form input{
+    margin: 5px -20px 5px 0;
+    width:470px;
+}
+
+.add-edit-form label{
+    width:100px;
+}
+
+.add-edit-form .pictureBrowser{
+    margin-top: 50px;
+    height: 0;
+    line-height: 30px;
+}
+
+.add-edit-form select{
+    margin: 5px 0;
+    width:380px;
+}
+
+.div-left{
+    padding: 0;
+    margin: 0;
+    width:625px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.div-right{
+    vertical-align: middle;
+    width:150px;
+    display: inline-block;
+    margin-bottom: 125px;
+}
+#category
+{
+    margin-right:  5px;
+}
+
+.add-edit-form button{
+    width:150px;
+    margin: 20px -100px 20px 140px;
+}
+.add-edit-form .btn-edit{
+   display: block;
+    margin-left:0;
 }
 
 ::-webkit-scrollbar {

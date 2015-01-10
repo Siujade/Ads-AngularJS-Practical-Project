@@ -20,7 +20,7 @@ app.directive('ngDisplay', [function () {
                     reader.onload = function (e) {
                         scope.imgUrl = reader.result;
 
-                        $('#preview').attr('src', e.target.result);
+                        $('.preview').attr('src', e.target.result);
                     };
                     reader.readAsDataURL(input.files[0]);
                 } else {

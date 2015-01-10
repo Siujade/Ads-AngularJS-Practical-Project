@@ -1,11 +1,12 @@
-<form class="add-creation-form outer-background" data-ng-heading="Ads - Edit Ad">
+<form class="add-creation-form add-edit-form outer-background" data-ng-submit="editAd(selectedAdData.id, null, selectedAdData)" data-ng-heading="Edit Ad">
     <h2 class="title-heading">Edit Ad</h2>
+    <div class="div-left">
     <label for="title">Title:</label>
     <input id="title" class="form-control" type="text" data-ng-model="selectedAdData.title"> <br />
     <label for="text">Text:</label>
     <textarea id="text" class="form-control" data-ng-model="selectedAdData.text"></textarea> <br />
-    <label>Image:</label>
-    <span class="image-data"></span><br />
+        <label>Image:</label>
+    <span class="image-data fix"></span><br />
     <label for="category">Category:</label>
     <select id="category" data-ng-model="selectedAdData.categoryId">
         <option data-ng-repeat="category in categories" data-ng-selected="category.name == selectedAdData.categoryName"
@@ -20,9 +21,19 @@
         </option>
     </select>
     <br />
-    <button data-ng-click="createAdd()" class="btn btn-lg btn-success">Publish</button>
-    <button class="btn btn-lg btn-success">Cancel</button>
+        <div class="clear">
+            <button class="btn btn-lg btn-success" type="submit">Publish</button>
+            <button class="btn btn-lg btn-success" type="reset">Cancel</button>
+        </div>
     <div data-ng-display data-ng-model="imgUrl"></div>
+    </div>
+    <div  class="div-right">
+        <img class="preview" data-ng-src="{{selectedAdData.imageDataUrl}}">
+        <button data-ng-click="selectedAdData.changeImage = true; selectedAdData.imageDataUrl = imgUrl" class="btn btn-success btn-edit btn-lg" type="button">
+            Change Image</button>
+        <button data-ng-click="selectedAdData.changeImage = true; selectedAdData.imageDataUrl = '' " class="btn  btn-lg btn-success btn-edit">
+            Delete Image</button>
+    </div>
 </form>
 
 

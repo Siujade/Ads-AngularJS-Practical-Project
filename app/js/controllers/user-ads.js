@@ -38,6 +38,7 @@ app.controller('UserAdsCtrl', function ($scope, adsUserData, $log) {
 
     $scope.editAd = function (id, action, ad) {
             adsUserData.edit(id, action, ad);
+        console.log(ad);
     };
 
     $scope.deleteAd = function (id) {
