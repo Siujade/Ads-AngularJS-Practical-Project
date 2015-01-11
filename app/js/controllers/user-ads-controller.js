@@ -50,7 +50,7 @@ app.controller('UserAdsCtrl', function ($scope, $location, adsUserData, $log) {
             category = $scope.category.id;
         }
 
-        if($scope.townId) {
+        if($scope.town) {
             town = $scope.town.id;
         }
 
