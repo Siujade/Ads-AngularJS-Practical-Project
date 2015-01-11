@@ -1,0 +1,16 @@
+<div class="container" ng-heading="Delete Ad">
+    <div class="my-add outer-background add-panel delete-dialog">
+        <h2 class="title-heading">Confirm delete ad?</h2>
+            <h2 class="title">{{selectedAdData.title}}</h2><span class="date">{{selectedAdData.date | date:'dd-MMM-yyyy'}}</span>
+            <img class="inner-background picture" data-ng-src="{{selectedAdData.imageDataUrl || 'resources/images/no_image.jpg'}}"/>
+            <div class="text inner-background">{{selectedAdData.text}}</div>
+            <div class="info-div">
+                Category:<span class="info inner-background">{{selectedAdData.categoryName || "No information"}}</span><br>
+                Town:<span class="info inner-background">{{selectedAdData.townName || "No information"}}</span>
+            </div>
+        <div class="centered">
+            <a class="btn btn-lg btn-success" data-ng-click="deleteAd(selectedAdData.id)">Delete</a>
+            <a href="#/my-ads/all" class="btn btn-lg btn-success" type="reset">Cancel</a>
+        </div>
+        </div>
+    </div>

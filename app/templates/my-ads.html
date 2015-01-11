@@ -5,8 +5,8 @@
               <img class="inner-background picture" data-ng-src="{{ad.imageDataUrl || 'resources/images/no_image.jpg'}}"/>
               <div class="text inner-background">{{ad.text}}</div>
               <div class="info-div">
-                     Category:<span class="info inner-background">{{ad.categoryName}}</span><br>
-                     Town:<span class="info inner-background">{{ad.townName}}</span>
+                     Category:<span class="info inner-background">{{ad.categoryName || 'No information'}}</span><br>
+                     Town:<span class="info inner-background">{{ad.townName || 'No information'}}</span>
               </div>
         </div>
         <div class="status-div">
@@ -14,7 +14,7 @@
             <button class="btn btn-success" data-ng-if="ad.status != 'Inactive'" data-ng-click="editAd(ad.id, 'deactivate')">Deactivate</button> <br />
             <button class="btn btn-success" data-ng-if="ad.status == 'Inactive'" data-ng-click="getAdData(ad.id)">Edit</button><br />
             <button class="btn btn-success" data-ng-if="ad.status == 'Inactive'" data-ng-click="editAd(ad.id, 'publishagain')">Publish Again</button><br />
-            <button class="btn btn-success" data-ng-if="ad.status == 'Inactive'" data-ng-click="deleteAd(ad.id)">Delete</button><br />
+            <button class="btn btn-success" data-ng-if="ad.status == 'Inactive'" data-ng-click="getAdData(ad.id, true)">Delete</button><br />
         </div>
     </div>
 </div>

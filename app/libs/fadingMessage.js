@@ -9,13 +9,14 @@
             "top": "260px",
             "width": "500px",
             "padding": "15px",
-            "border": "2px solid black",
+            "border": "2px solid forestgreen",
             "background": "yellow",
             "text-align": "center",
             "font-size": "20px",
             "display": "none",
             "position": "absolute",
-            "z-index" : "888"
+            "z-index" : "888",
+            "box-shadow" : "10px 10px 5px -7px rgba(0,0,0,0.75)"
         });
 
         function loadCss() {
@@ -51,7 +52,7 @@
         }
 
         function success(message) {
-            $this.css({"color": "snow", 'background': "lime"});
+            $this.css({"color": "snow", 'background': "#449A44"});
             $this.fadeIn(500);
             $this.text(message);
             hideMessage($timeToHide);

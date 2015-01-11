@@ -22,8 +22,7 @@ app.directive('ngDisplay', [function () {
                     };
                     reader.readAsDataURL(input.files[0]);
                 } else {
-
-                    //$(attrs.preview).attr('alt', 'File type not supported!');
+                    scope.msgBox.error('Unsupported image format!');
                 }
             }
         }

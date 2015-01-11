@@ -2,6 +2,9 @@
 .outer-background{
     background: #A9D18E;
     border: 2px solid #698A54;
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
 }
 
 .inner-background{
@@ -32,13 +35,14 @@
     margin: 5px;
     max-width: 550px;
     height: 395px;
+    font-size: 19px;
 }
 
 .add-panel .title{
     overflow: hidden;
     font-weight: bolder;
     font-size:22px;
-    margin: 20px 0 0 0;
+    margin: 20px 0 0 5px;
     display: inline-block;
     width:405px;
     line-height: 20px;
@@ -74,10 +78,11 @@
 .add-panel .info{
     background: #C5E0B4;
     margin: 5px;
-    width:190px;
+    width:200px;
     display: inline-block;
     text-align: left;
     font-weight: normal;
+    max-height: 40px;
 }
 
 /*AddCreation*/
@@ -179,8 +184,9 @@
 .info-div{
     font-weight: bold;
     float:right;
-    width:300px;
+    width:310px;
     text-align: right;
+    overflow: hidden;
 }
 
 .container{
@@ -198,7 +204,7 @@ header{
 }
 header > h1{
     width:350px;
-    left:7%;
+    left:8%;
     position: relative;
     font-weight: bold;
     font-size: 31px;
@@ -477,6 +483,34 @@ nav ul{
    display: block;
     margin-left:0;
 }
+
+/*Delete ad*/
+.delete-dialog{
+    font-size: 20px;
+    width:650px;
+    height: 630px;
+    padding: 20px;
+    border-radius: 25px;
+    vertical-align: bottom;
+}
+
+.delete-dialog .title-heading{
+    font-size: 30px;
+    padding-bottom: 0;
+}
+
+.delete-dialog a{
+    vertical-align: bottom;
+    margin: 0 5px;
+    width:160px;
+    height: 50px;
+}
+
+.delete-dialog .centered{
+    width:400px;
+    margin: 55% auto;
+}
+
 
 
 ::-webkit-scrollbar {

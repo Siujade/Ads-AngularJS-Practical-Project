@@ -39,6 +39,10 @@ app.config(['$routeProvider',
                 controller: "UserAdsCtrl",
                 templateUrl: "./templates/add-edit.html"
             })
+            .when('/delete', {
+                controller: "UserAdsCtrl",
+                templateUrl: "./templates/delete.html"
+            })
             .otherwise({redirectTo: '/'});
     }
 ]);

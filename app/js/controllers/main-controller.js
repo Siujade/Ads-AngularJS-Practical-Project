@@ -17,9 +17,14 @@ app.controller('MainCtrl', function ($scope, $location, $route, userData, public
 
     };
 
-    $scope.getAdData = function(id) {
+    $scope.getAdData = function(id, forDelete) {
         $scope.selectedAdData = adsUserData.getAdById(id);
-        location.href="#/edit";
+
+        if(forDelete) {
+            $location.path('/delete');
+        } else {
+            $location.path('/edit');
+        }
     };
 
     $scope.getUserData = function() {

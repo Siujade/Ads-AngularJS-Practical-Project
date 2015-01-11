@@ -1,4 +1,4 @@
-app.controller('UserAdsCtrl', function ($scope, $location,$timeout, adsUserData, $log) {
+app.controller('UserAdsCtrl', function ($scope, $location, adsUserData, $log) {
     function displayData(data) {
         $scope.data = data;
         $scope.ads = data.ads;
@@ -43,12 +43,23 @@ app.controller('UserAdsCtrl', function ($scope, $location,$timeout, adsUserData,
     };
 
     $scope.createAdd = function () {
+        var category = '';
+        var town = '';
+
+        if($scope.category) {
+            category = $scope.category.id;
+        }
+
+        if($scope.townId) {
+            town = $scope.town.id;
+        }
+
         var data = {
             title: $scope.title,
             text: $scope.text,
             imageDataUrl: $scope.imgUrl,
-            categoryId: $scope.category.id,
-            townId: $scope.town.id
+            categoryId: category,
+            townId: town
         };
 
         adsUserData.create(data).$promise
@@ -93,7 +104,8 @@ app.controller('UserAdsCtrl', function ($scope, $location,$timeout, adsUserData,
                 error('Failed to delete ad')
             });
 
-        $scope.selectedAdStatus = 0;
+        $scope.selectedAdStatus = 2;
+        $location.path('/my-ads/all')
     };
 });
 
