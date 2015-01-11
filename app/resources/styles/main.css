@@ -361,7 +361,7 @@ nav ul{
 }
 
 .form-edit-info select{
-   margin: -10px 0 0 37px;
+   margin: -10px 0 0 77px;
 }
 
 .form-edit-info{
@@ -533,9 +533,9 @@ nav ul{
 /*Responsive*/
 @media only screen
 and (min-width : 1280px)
-and (max-width : 1367px) {
+and (max-width : 1640px) {
     .container{
-        max-width:700px;
+        max-width:820px;
         margin: 15px 20px;
     }
 
@@ -545,6 +545,38 @@ and (max-width : 1367px) {
         min-width:680px;
         height: 395px;
         font-size: 17px;
+    }
+
+    .form-edit-info select,
+    .form-edit-info input,
+    .change-password select,
+    .change-password input
+    {
+        width:250px;
+    }
+
+    .title-heading{
+        width:50%;
+    }
+
+    #profile-form{
+        max-width:1370px;
+    }
+
+    .form-edit-info select{
+        margin: -10px 0 0 37px;
+    }
+
+    .form-edit-info,
+    .change-password{
+        padding: 0;
+        margin-right: 1px;
+        min-width: 350px;
+        max-width: 400px;
+    }
+
+    #logout{
+        left:24%;
     }
 }
 
