@@ -2,17 +2,17 @@ app.directive('ngDisplay', [function () {
     return {
         restrict: 'A',
         templateUrl: './templates/browse.html',
-        link: function (scope, element, attrs) {
-
+        link: function (scope) {
             var $browser =  $('#browser');
 
             $browser.change(function(){
                 $('.image-data').text($browser.val());
-                readURL(this)
+                readURL(this);
             });
 
             function readURL(input) {
-                if (input.files && input.files[0]) {
+                var file = input.files[0];
+                if (file.type.match(/image\/.*/)) {
                     var reader = new FileReader();
 
                     reader.onload = function (e) {
@@ -22,7 +22,8 @@ app.directive('ngDisplay', [function () {
                     };
                     reader.readAsDataURL(input.files[0]);
                 } else {
-                    scope.msgBox.error('Unsupported image format!');
+
+                    scope.msgBox.error('Unsupported format!');
                 }
             }
         }

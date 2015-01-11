@@ -9,7 +9,7 @@
             "top": "260px",
             "width": "500px",
             "padding": "15px",
-            "border": "2px solid forestgreen",
+            "border": "2px solid black",
             "background": "yellow",
             "text-align": "center",
             "font-size": "20px",
