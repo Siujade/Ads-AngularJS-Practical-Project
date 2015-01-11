@@ -29,9 +29,8 @@
     </div>
     <div  class="div-right">
         <img class="preview" data-ng-src="{{selectedAdData.imageDataUrl}}">
-        <button data-ng-click="selectedAdData.changeImage = true; selectedAdData.imageDataUrl = imgUrl" class="btn btn-success btn-edit btn-lg" type="button">
-            Change Image</button>
-        <button data-ng-click="selectedAdData.changeImage = true; selectedAdData.imageDataUrl = '' " class="btn  btn-lg btn-success btn-edit">
+        <button data-ng-click='changeImage(imgUrl)' class="btn btn-success btn-edit btn-lg" type="button">Change Image</button>
+        <button data-ng-click="changeImage()" type="button" class="btn  btn-lg btn-success btn-edit">
             Delete Image</button>
     </div>
 </form>

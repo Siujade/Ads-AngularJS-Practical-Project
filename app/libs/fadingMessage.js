@@ -6,7 +6,7 @@
         $this.css({
             "right": "0",
             "left": "35%",
-            "top": "560px",
+            "top": "260px",
             "width": "500px",
             "padding": "15px",
             "border": "2px solid black",
@@ -14,7 +14,8 @@
             "text-align": "center",
             "font-size": "20px",
             "display": "none",
-            "position": "absolute"
+            "position": "absolute",
+            "z-index" : "888"
         });
 
         function loadCss() {

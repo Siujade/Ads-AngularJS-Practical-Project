@@ -32,8 +32,8 @@
         <input type="password" id="newPassword" class="form-control" required
                data-ng-model="userPasswords.newPassword">
         <label for="confirmPassword">Confirm new password</label>
-        <input type="password" id="confirmPassword" class="form-control" required
-               data-ng-model="userPasswords.confirmPassword">
+        <input type="password" id="confirmPassword" class="form-control" required name="repeatPassword"
+               data-ng-model="userPasswords.confirmPassword" data-ng-class="{'has-error': userPasswords.confirmPassword != userPasswords.newPassword}">
         <div class="centered">
         <button class="btn btn-lg btn-success" type="submit">Change Password</button>
         <button class="btn btn-lg btn-success" type="reset">Cancel</button>

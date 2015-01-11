@@ -16,7 +16,7 @@
     margin: 20px auto;
     width: 70%;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 23px;
     padding-bottom: 15px;
     border-bottom: 3px inset #69944D;
 }
@@ -84,7 +84,7 @@
 .add-creation-form{
     border-radius: 5px;
     width:650px;
-    margin: 20px auto 90px auto;
+    margin: 20px auto 0 auto;
     text-align: right;
     max-height: 650px;
 }
@@ -197,21 +197,27 @@ header{
     padding-bottom: 5px;
 }
 header > h1{
+    width:350px;
+    left:7%;
+    position: relative;
     font-weight: bold;
     font-size: 31px;
+    display: inline-block;
 }
 
 #logout{
-    display: block;
-    left: 90%;
-    top: 3%;
+    display: inline-block;
+    left: 30%;
+    top: 8%;
     text-align: right;
-    position: absolute;
+    position: relative;
     font-size: 20px;
+    width: 250px;
 }
 
 #logout > a{
     margin-left: 15px;
+    color:royalblue;
 }
 
 nav{
@@ -225,7 +231,7 @@ nav{
 nav ul{
     overflow:auto;
     max-width:200px;
-    max-height: 333px;
+    max-height: 318px;
 }
 
 /*Login Register Panels*/
@@ -368,7 +374,7 @@ nav ul{
     width:820px;
     max-width: 820px;
     max-height: 600px;
-    height: 300px;
+    height: 350px;
 }
 .my-add .content-div{
     height: 298px;

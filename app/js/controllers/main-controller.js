@@ -13,6 +13,8 @@ app.controller('MainCtrl', function ($scope, $location, $route, userData, public
     $scope.logout = function () {
         $scope.loc = 'Ads - Home';
         userData.logout();
+        $scope.msgBox.success('Successfully logout!');
+
     };
 
     $scope.getAdData = function(id) {

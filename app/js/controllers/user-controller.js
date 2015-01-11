@@ -44,15 +44,37 @@ app.controller('UsersCtrl', function ($scope, $location, userData) {
                 $location.path('#/home');
             },
             function (error) {
-               // $scope.msgBox.error(error.data.error_description);
+                var errorMessage = error.data.modelState;
+
+                for(var err in errorMessage ){
+                    $scope.msgBox.error(errorMessage[err]);
+                }
             });
     };
 
     $scope.editProfile = function(data) {
         userData.editProfile(data)
+            .$promise
+            .then(function () {
+                $scope.msgBox.success('Profile successfully edited.');
+            },
+            function () {
+                $scope.msgBox.error('Edit failed.');
+            });
     };
 
     $scope.changePassword = function(data) {
         userData.changePassword(data)
+            .$promise
+            .then(function () {
+                $scope.msgBox.success('Password successfully changed.');
+            },
+            function (error) {
+               var errorMessage = error.data.modelState;
+
+                for(var err in errorMessage ){
+                    $scope.msgBox.error(errorMessage[err]);
+                }
+            });
     };
 });

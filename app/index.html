@@ -10,7 +10,7 @@
 <body  data-ng-controller="MainCtrl">
 <div id="messageBox" data-ng-message></div>
 <header data-ng-cloak>
-    <h1>{{loc}}<span id="logout">{{currentUser}}<a href  data-ng-click="logout()" data-ng-if="isLogged">Logout</a></span></h1>
+    <h1>{{loc}}</h1><span id="logout">{{currentUser}}<a href  data-ng-click="logout()" data-ng-if="isLogged">Logout</a></span>
 </header>
 <nav class="navbar-left outer-background"><h3 class="title-heading">Navigation</h3>
     <ul class="nav nav-pills nav-stacked" data-ng-cloak>
@@ -89,12 +89,12 @@
 <script src="js/directives/ng-browser.js"></script>
 <script src="js/directives/ng-active.js"></script>
 <script src="js/directives/ng-message.js"></script>
-<script src="js/services/public.js"></script>
-<script src="js/services/user-factory.js"></script>
-<script src="js/services/user-ads.js"></script>
-<script src="js/controllers/main.js"></script>
-<script src="js/controllers/ads.js"></script>
-<script src="js/controllers/user-ads.js"></script>
-<script src="js/controllers/users.js"></script>
+<script src="js/services/public-service.js"></script>
+<script src="js/services/user-service.js"></script>
+<script src="js/services/private-ads-service.js"></script>
+<script src="js/controllers/main-controller.js"></script>
+<script src="js/controllers/public-ads-controller.js"></script>
+<script src="js/controllers/user-ads-controller.js"></script>
+<script src="js/controllers/user-controller.js"></script>
 </body>
 </html>
