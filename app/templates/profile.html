@@ -13,7 +13,7 @@
         <label for="town">Town</label>
         <div class="checkbox">
                 <select id="town" data-ng-model="userData.townId">
-                    <option data-ng-repeat="town in towns" data-ng-selected="town.name == towns[userData.townId].name"
+                    <option data-ng-repeat="town in towns" data-ng-selected="town.name == towns[userData.townId - 1].name"
                             value="{{town.id}}" data-ng-init="userData.townId = value">{{town.name}}
                     </option>
                 </select>
